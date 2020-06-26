@@ -1,0 +1,15 @@
+Installation Guide
+
+
+Please note that the following three files are needed for PyVibMS to properly function:
+ - __init__.py
+ - gui_cut.ui
+ - cgo_arrow.py
+
+
+Installation steps:
+ - Install the PyMOL 2.x
+ - Open PyMOL and navigate to the Plugin Manager menu under the Plugin button (next to Help button)
+ - On the Install New Plugin tab, select the "__init__.py" file in the PyVibMS source folder after clicking the Choose file button. This step loads PyVibMS plugin into PyMOL
+ - The PyVibMS item will be added to the Plugin menu if properly installed. Clicking PyVibMS opens its GUI window.
+
