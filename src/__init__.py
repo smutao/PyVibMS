@@ -2247,7 +2247,7 @@ def run_plugin_gui():
 
                 cmd.pseudoatom (pos=global_xyz[i], object="pk1")
                 cmd.pseudoatom (pos=list_add(global_xyz[i],phase*global_vector_len*current_mode[i]), object="pk2") 
-                cmd.do("cgo_arrow pk1,pk2")
+                cmd.do('cgo_arrow "pk1", "pk2" ')
                 cmd.delete("pk*")
 
            cmd.zoom("geom",2.0)
