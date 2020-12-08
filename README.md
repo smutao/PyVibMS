@@ -50,6 +50,49 @@ Mac OS
 
 
 
+Supported quantum chemistry programs 
+=========
+
+Natively supported
+----
+
+* Gaussian 09/16
+* Q-Chem
+* CRYSTAL17
+* VASP 
+
+Generically supported
+----
+
+* [Adf](http://www.scm.com/)
+* [BDF](http://182.92.69.169:7226)
+* [CFour](http://www.cfour.de/)
+* [Columbus](http://www.univie.ac.at/columbus/)
+* [CP2k](http://www.cp2k.org/)
+* [Dalton](http://daltonprogram.org/)
+* [deMon2k](http://www.demon-software.com/public_html/)
+* [Dmol3](http://accelrys.com/)
+* [Firefly](http://classic.chem.msu.su/gran/gamess/)
+* [Gamess](http://www.msg.chem.iastate.edu/gamess/)
+* [Gamess-UK](http://www.cfs.dl.ac.uk/)
+* [Molcas](http://www.molcas.org/) and [OpenMolcas](https://gitlab.com/Molcas/OpenMolcas)
+* [Molpro](http://www.molpro.net/)
+* [Mopac](http://openmopac.net/)
+* [NWChem](http://www.nwchem-sw.org/index.php/Main_Page)
+* [Orca](https://orcaforum.kofo.mpg.de)
+* [Pqs](http://www.pqs-chem.com/)
+* [Psi4](http://www.psicode.org/)
+* [Turbomole](http://www.cosmologic.de/)
+* [Quantum ESPRESSO](https://www.quantum-espresso.org/)
+* [DFTB+](https://dftbplus.org/)
+* and more
+
+
+Other analysis tools
+------
+* [LModeA](https://onlinelibrary.wiley.com/doi/full/10.1002/wcms.1480)
+* [Phonopy](https://phonopy.github.io/phonopy/)
+
 
 
 
