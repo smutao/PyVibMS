@@ -94,6 +94,11 @@ Other analysis tools
 * [Phonopy](https://phonopy.github.io/phonopy/)
 
 
+Tips
+========
+* When using the open-source version of PyMOL, one may find it difficult to export the vibration animation directly as a GIF or QuickTime movie due to the missing encoder, a work-around is to export the animation as "PNG images" (by clicking "File"->"Export Movie As"->"PNG Images..."). Then one can use a third-party tool like [ezgif](https://ezgif.com/apng-to-gif) to combine these PNG images as animated GIF image.  
+Here is an example  
+<img src="https://raw.github.com/smutao/PyVibMS/master/gallery/animations/gif-format.gif" width="350">
 
 
 
