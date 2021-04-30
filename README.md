@@ -5,6 +5,8 @@ PyVibMS
 =========================
 A PyMOL plugin for visualizing vibrations in molecules and solids
 
+介绍PyVibMS使用的中文文章 请前往 http://bbs.keinsci.com/thread-22835-1-1.html
+
 Our paper on PyVibMS is now published. 🎉 
 
 PyVibMS: a PyMOL plugin for visualizing vibrations in molecules and solids,
