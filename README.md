@@ -59,6 +59,8 @@ Natively supported
 ----
 
 * Gaussian 09/16
+* ORCA 4
+* xtb 
 * Q-Chem
 * CRYSTAL17
 * VASP 
@@ -81,7 +83,6 @@ Generically supported
 * [Molpro](http://www.molpro.net/)
 * [Mopac](http://openmopac.net/)
 * [NWChem](http://www.nwchem-sw.org/index.php/Main_Page)
-* [Orca](https://orcaforum.kofo.mpg.de)
 * [Pqs](http://www.pqs-chem.com/)
 * [Psi4](http://www.psicode.org/)
 * [Turbomole](http://www.cosmologic.de/)
