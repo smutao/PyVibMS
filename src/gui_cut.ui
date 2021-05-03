@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>518</width>
+    <width>530</width>
     <height>707</height>
    </rect>
   </property>
@@ -202,6 +202,16 @@
        <item>
         <property name="text">
          <string>LMODEA (not supported yet)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>xtb (g98.out file)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>ORCA 4</string>
         </property>
        </item>
       </widget>

@@ -66,7 +66,44 @@ import os.path
 
 
 ########
+def count_atom_xtb(container):
+    nvib = 0
+    f1=[]
+    f2=[]
+    flag_1 = " Atom AN      X"
+    flag_2 = "                  4"
+    for i in range(len(container)):
+        line = container[i]
+        if "Frequencies --" in line:
+           if len(line)>60:
+              nvib = nvib + 3
+           elif len(line)>40:
+              nvib = nvib + 2
+           else:
+              nvib = nvib + 1
+        if flag_1 in line:
+           f1.append(i)
+        if flag_2 in line:
+           f2.append(i)
+    if len(f2) != 0:
+       natom = f2[0]-f1[0]-1     
+ 
+    j=f1[0] 
+    # nvib = 1,natom = 2 
+    line3 = container[j+3]
+    if line3[0:4] != '   3':
+       natom = 2   
+    # natom = 3, nvib =3  
+    if line3[0:4] == '   3':
+       if (j+4) >= (len(container)-1):
+          natom = 3
+
+    #print(nvib,natom)
+    return nvib,natom
+ 
+
 def count_atom(container):
+    # possible issue: Nvib=3 or 1 
     nvib = 0
     f1=[]
     f2=[]
@@ -123,6 +160,29 @@ def extract_freq(container): # for G16
 
     return frq_list,sym_list
 
+def extract_freq_xtb(container): # for xtb
+    frq_list = []
+    sym_line_num = []
+    for i in range(len(container)):
+        line = container[i]
+        if "Frequencies" in line:
+            sym_line_num.append(i-1)
+            b = line.split()[2:]
+            for j in range(len(b)):
+                frq_list.append( round(float(b[j]),1) )
+
+    sym_list = []
+    for i in range(len(sym_line_num)):
+        j = sym_line_num[i]
+        b = container[j].split()
+        for k in range(len(b)):
+            sym_list.append(b[k])
+
+
+    return frq_list,sym_list
+
+    
+
 
 def extract_mode_cry(container,natom,nvib): #for crystal17
     #
@@ -174,6 +234,64 @@ def extract_mode_cry(container,natom,nvib): #for crystal17
 
     return modes 
 
+
+
+def extract_mode_xtb(container,natom,nvib):
+    mode_raw = []
+    flag_1 =  "Atom AN      X"
+    mode_grid=[ ]
+
+
+    ready=0
+    for i in range(len(container)):
+        line = container[i]
+        if flag_1 in line:
+           ready = 1
+           continue
+        if ready > 0 and ready<=natom:
+           #print(line)
+           b = line.split()[2:]
+           b = [float(j) for j in b]
+          
+           mode_grid.append(b) 
+
+           ready = ready + 1
+           continue
+        if ready>natom:
+           ready = 0
+
+    #
+    #print("mode_grid")
+    #print(mode_grid)
+    for i in range(nvib):
+
+
+        j = i + 1
+        row = i / 3
+        row = int(row)
+        col = j % 3
+        if col == 0:
+           col = 3
+        col = col - 1
+
+        this_vib = []
+        #row:
+        # natom*row - start 
+
+        #col:
+        # 3*col - start
+        for r in range(natom):
+           per_line = [] 
+           for c in range(3):
+              per_line.append( mode_grid[ natom*row+r][ 3*col+c ] )
+           this_vib.append(per_line)
+        #print("this_vib")
+        #print(this_vib)
+
+        mode_raw.append(this_vib)
+
+    #
+    return mode_raw 
 
 
 
@@ -313,8 +431,27 @@ def parse_lmode(path): # obtain vibration information from LMode text file
     return  new_freqs, new_modes, new_syms, new_comments 
 
 
+def parse_xtb(path): 
 
+    flag_1 = "and normal coordinates"
+    container = []
+    switch_1 = 0
+    with open(path) as f:
+         for line in f:
+             if flag_1 in line:
+                switch_1 = 1
+                continue
+             if switch_1 == 1:
+                if len(line) > 3:
+                   container.append(line) 
 
+    nvib,natom = count_atom_xtb(container) 
+    freqs,syms = extract_freq_xtb(container) 
+ 
+    modes = []
+    modes=extract_mode_xtb(container,natom,nvib)
+
+    return freqs,modes,syms
 
 def parse_g16(path): # obtain vibration from G16 output 
     
@@ -585,6 +722,7 @@ global_this_vib_index = 0 # current index of vibration in the table
 
 global_xyz = []
 global_program = 0 # 0 - xyz, 1 - Gaussian, 2 - VASP, 3 - CRYSTAL
+                   # 6 - xtb, 7 - ORCA
 
 global_periodic_dimension = 0 
 
@@ -1390,6 +1528,67 @@ def run_plugin_gui():
         os.remove("crystal17_geom_filename.xyz")
 
 
+    def load_xtb_xyz(path,obj_name):
+        flag_1 = "Number     Number      Type              X           Y           Z"
+        flag_2 = "------------------"
+
+        elem = []
+        elem_n = []
+        coor = []       
+
+        lab = 0
+        have_full_elem = 0
+        info_collects = []
+        with open(path) as f:
+             for line in f:
+                 if flag_1 in line: 
+                     lab = 1
+                     continue 
+                 if lab == 1:
+                    lab = 2
+                    this_geom = []
+                    continue
+                 if lab == 2:
+                    #this_geom = []
+                    if flag_2 in line:
+                       lab = 0
+                       have_full_elem = 1
+                       info_collects.append( this_geom )
+                       continue 
+                    #
+                    if have_full_elem == 0:
+                       e = int(line.split()[1])
+                       elem.append( get_symbol(e) )
+                    x = str( line.split()[3] )
+                    y = str( line.split()[4] )
+                    z = str( line.split()[5] )
+                    this_geom.append([x,y,z])
+
+                    continue 
+
+        #
+        #print(elem)
+        coor = info_collects[-1]
+        #print(coor)
+
+        natom = len(elem)
+        
+        f1 = open("xtb_geom_pymol_long_filename_lol.xyz","w")
+        f1.write(str(natom)+"\n"+"title\n")
+        for i in range(natom):
+            f1.write(elem[i]+" ")
+            f1.write(coor[i][0] + " ")
+            f1.write(coor[i][1] + " ")
+            f1.write(coor[i][2] + "\n")
+        f1.close()
+
+        cmd.load("xtb_geom_pymol_long_filename_lol.xyz",obj_name)
+        os.remove("xtb_geom_pymol_long_filename_lol.xyz")
+
+
+ 
+        return
+
 
 
     def load_g16_xyz(path,obj_name):
@@ -1482,7 +1681,7 @@ def run_plugin_gui():
 
 
     def loadxyz(): # main geometry loader 
-
+        #import sys
         #dialog_sub_2 = QtWidgets.QDialog()
         #uifile_2 = os.path.join(os.path.dirname(__file__), 'sub_window_1.ui')
         #form_sub_2 = loadUi(uifile_2, dialog_sub_2)
@@ -1523,6 +1722,7 @@ def run_plugin_gui():
  
 
         cmd.bg_color("white")
+        cmd.set("ray_shadow","0") 
         cmd.set("orthoscopic") # don't use perspective 
         
         cmd.delete("geom")
@@ -1600,9 +1800,20 @@ def run_plugin_gui():
 
               #print(global_modes,global_freqs)
               #play_vib(xyz_coor,global_modes[0])
+        
+        if global_program == 6:
+           # xtb g98.out file
+           load_xtb_xyz(xyz_file_path,"geom")
+           set_valence_obj("geom",1)
+         
+           # get normal modes & frequencies
+           if form.check_contain_vib.isChecked():
+              global_freqs,global_modes,global_syms = \
+                     parse_xtb(xyz_file_path)
+              
+              table_act()
 
-
-
+ 
         # after input geometry has been read 
         cmd.show_as("lines","geom")
         cmd.set("line_color","gray8")
@@ -1613,7 +1824,8 @@ def run_plugin_gui():
         cmd.color("white", "elem H")
         cmd.set("line_radius", "0.05","geom") 
         #cmd.set("sphere_scale", "0.13")
-
+        
+        #sys.exit()
 
         # get the coordinates of "geom"
         xyz_coor = cmd.get_model('geom', 1).get_coord_list()  #cmd.get_coords('geom', 1)
@@ -2295,10 +2507,9 @@ def run_plugin_gui():
 
 
     def about_window():
-        L=[65, 117, 116, 104, 111, 114, 58, 32, 89, 117, 110, 119, 101, 110, 32, 84, 97, 111, 10, 121, 119, 116, 97, 111, 46, 115, 109, 117, 91, 97, 116, 93, 103, 109, 97, 105, 108, 46, 99, 111, 109, 10, 50, 48, 49, 57]
+        L=[65, 117, 116, 104, 111, 114, 58, 32, 89, 117, 110, 119, 101, 110, 32, 84, 97, 111, 10, 121, 119, 116, 97, 111, 46, 115, 109, 117, 91, 97, 116, 93, 103, 109, 97, 105, 108, 46, 99, 111, 109, 10, 50, 48, 49, 57,45,50,48,50,49]
         Lp=''.join(chr(i) for i in L)
 
-        #QtWidgets.QMessageBox.information(None, 'About this Plugin', 'Author: Yunwen Tao\nywtao.smu[at]gmail.com\n2019')
 
         QtWidgets.QMessageBox.information(None, 'About this Plugin', Lp)
 
