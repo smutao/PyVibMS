@@ -117,7 +117,17 @@ def count_atom(container):
            f1.append(i)
         if flag_2 in line:
            f2.append(i)
-    natom = f2[0] - f1[0] - 1
+
+    if len(f2) != 0:       
+       natom = f2[0] - f1[0] - 1
+
+    j=f1[0]
+    line3 = container[j+3]
+    if line3[0:6] != '     3':
+       natom = 2
+    if line3[0:6] == '     3':
+       if (j+4) >= (len(container)-2):
+          natom = 3   
 
     #print(nvib,natom)
     return nvib,natom
@@ -233,6 +243,51 @@ def extract_mode_cry(container,natom,nvib): #for crystal17
         modes.append( this_vib )
 
     return modes 
+
+
+
+def extract_mode_orca(container,nvib,freq_idx):
+
+    mode_grid = []
+    nl = nvib + 1
+    ncol = 5
+    for i in range(len(container)):
+        line = container[i]
+        if i%nl != 0 and len(line) > 3:
+           b = line.split()[1:]  
+           b = [float(j) for j in b]
+
+           mode_grid.append(b)
+
+    #print(mode_grid)
+    mode_raw = []
+    for i in freq_idx:
+        row = i/ncol
+        row = int(row)
+
+        col = i%ncol
+        this_vib = []
+ 
+        start_row = nvib*row 
+        start_col =  col
+        per_line = []
+        for j in range(nvib):
+            #per_line = []
+            k = j + 1
+            if k%3 != 0:
+               per_line.append(mode_grid[start_row+j][start_col]  )
+            else:
+               per_line.append(mode_grid[start_row+j][start_col]  )
+               this_vib.append(per_line)
+               per_line=[]
+
+            
+            #this_vib.append(mode_grid[start_row+j][start_col]  )
+        mode_raw.append(this_vib)
+
+    #print(mode_raw)
+    return mode_raw
+
 
 
 
@@ -429,6 +484,62 @@ def parse_lmode(path): # obtain vibration information from LMode text file
 
 
     return  new_freqs, new_modes, new_syms, new_comments 
+
+
+def parse_orca(path):
+     
+    flag_1 = "vibrational_frequencies"
+    switch_1 = 0
+
+    flag_2 = "normal_modes"
+    switch_2 = 0
+    container=[]
+
+    freq1=[]
+    freq2=[]
+    sym2=[]
+    freq2_idx=[]
+    with open(path) as f:
+         for line in f:
+             if flag_2 in line:
+                switch_2 = 1
+                continue
+             if switch_2 == 1:
+                switch_2 = 2
+                continue
+             if switch_2 == 2:
+                if "#" in line:
+                   switch_2 = -10
+                else:
+                   container.append(line)
+
+
+
+             if flag_1 in line:
+                switch_1 = 1
+                continue
+             if switch_1 == 1:
+                nvib = int(line)
+                switch_1 = 10
+                continue
+             if switch_1 >= 10:
+                if switch_1 >= (10+nvib):
+                   switch_1 = -10
+                else:
+                   f = float(line.split()[1])
+                   freq1.append(f)
+                   if abs(f) > 1E-3:
+                      fi = int(line.split()[0])           
+                      freq2_idx.append(fi)
+                      freq2.append(round(f,1))
+                      sym2.append("a")
+                switch_1 = switch_1 + 1 
+    #
+    #print(freq2,sym2)
+    modes = []
+    modes = extract_mode_orca(container,nvib,freq2_idx)
+ 
+    return freq2,modes,sym2
 
 
 def parse_xtb(path): 
@@ -839,7 +950,12 @@ def run_plugin_gui():
               val = 2.0
            if dis < 1.20:
               val = 3.0
- 
+
+        if lis2 == ["H","H"]:
+           val = 0.0
+           if dis <= 1.0:
+              val = 1.0
+
         # user can add more valence information when necessary.
         if lis2 == ["Na","Cl"] or lis2 == ["Cl","Na"]:
            val = 0.0
@@ -865,13 +981,20 @@ def run_plugin_gui():
                    a_xyz = xyz_list[i]
                    b_xyz = xyz_list[j] 
                    d = calc_dis(a_xyz,b_xyz)
+                   #print("flag1",[a,b],d)
                    valence = judge_valence([a,b],d)
-                   if valence != 0.0 and valence != 1.0:
+                   #print("flag2")
+                   if valence != 0.0: # and valence != 1.0:
                       #print(a,b)
                       cmd.delete("pka")
                       cmd.delete("pkb")
                       cmd.select("pka","id "+str(i+1)+" and "+" model "+obj_name) # select atom here...
                       cmd.select("pkb","id "+str(j+1)+" and "+" model "+obj_name)
+                      if valence == 1.0:
+                         cmd.bond("pka","pkb") # just in case no bond is shown
+                         cmd.valence("1","pka","pkb")
+                         cmd.set("valence_mode","0")
+                         cmd.set("valence_size","0.06")
                       if valence == 2.0:
                          cmd.valence("2","pka","pkb")
                          cmd.set("valence_mode","0")
@@ -1080,7 +1203,8 @@ def run_plugin_gui():
 
     def findxyz():
         xyzname = getOpenFileNameWithExt(
-              dialog, 'Open...',filter='XYZ File (*.xyz);;Output File (*.out);;Log File (*.log);;VASP OUTCAR (OUTCAR)')
+              dialog, 'Open...',filter='XYZ File (*.xyz);;Output File (*.out);;Log File (*.log);;\
+                      VASP OUTCAR (OUTCAR);;ORCA Hess File (*.hess)')
         if xyzname:
             form.input_geomname.setText(xyzname) 
         pass
@@ -1527,6 +1651,47 @@ def run_plugin_gui():
         cmd.load("crystal17_geom_filename.xyz",obj_name)
         os.remove("crystal17_geom_filename.xyz")
 
+    def load_orca_xyz(path,obj_name):
+        flag_1 = "$atoms"
+
+        lab = 0
+        coor = []
+        elem = []
+        with open(path) as f:
+             for line in f:
+                 if flag_1 in line:
+                    lab=1
+                    continue
+                 if lab==1:
+                    natom = int(line)
+                    lab=10
+                    continue
+                 if lab>=10:
+                    if lab >= (10+natom):
+                       lab = -1
+                    else:
+                       e = line.split()[0]
+                       elem.append(e)
+                       x = 0.529177*float( line.split()[2] )
+                       y = 0.529177*float( line.split()[3] )
+                       z = 0.529177*float( line.split()[4] )
+                       coor.append([str(x),str(y),str(z)]) 
+                    lab=lab+1 
+        #
+        f1 = open("orca_geom_pymol_long_filename_lol.xyz","w")
+        f1.write(str(natom)+"\n"+"title\n")
+        for i in range(natom):
+            f1.write(elem[i]+" ")
+            f1.write(coor[i][0] + " ")
+            f1.write(coor[i][1] + " ")
+            f1.write(coor[i][2] + "\n")
+        f1.close()
+
+        cmd.load("orca_geom_pymol_long_filename_lol.xyz",obj_name)
+        os.remove("orca_geom_pymol_long_filename_lol.xyz")
+        
+        return
+
 
     def load_xtb_xyz(path,obj_name):
         flag_1 = "Number     Number      Type              X           Y           Z"
@@ -1800,7 +1965,19 @@ def run_plugin_gui():
 
               #print(global_modes,global_freqs)
               #play_vib(xyz_coor,global_modes[0])
-        
+
+        if global_program == 7:
+           # ORCA 4 .hess file
+           load_orca_xyz(xyz_file_path,"geom") 
+           set_valence_obj("geom",1)
+           
+           if form.check_contain_vib.isChecked():
+              global_freqs,global_modes,global_syms = parse_orca(xyz_file_path)
+              
+              table_act()
+
+
+
         if global_program == 6:
            # xtb g98.out file
            load_xtb_xyz(xyz_file_path,"geom")
@@ -1841,7 +2018,8 @@ def run_plugin_gui():
         #global_modes.append( mode_1 )
         
         #play_vib(xyz_coor,mode_1)
-        if global_program == 1 or global_program == 2 or global_program == 3 or global_program == 5 :
+        if global_program == 1 or global_program == 2 or global_program == 3 or global_program == 5 \
+           or global_program == 6 or global_program == 7:
             if len(global_modes) != 0:
                global_this_vib_index = 0 
                play_vib(xyz_coor,global_modes[0]) # prepare the coordinates to simulate animations 

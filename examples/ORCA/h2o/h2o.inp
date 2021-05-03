@@ -1,0 +1,20 @@
+! BP def2-SVP RI def2/J  TightSCF Grid5 NoFinalGrid
+! Opt
+! AnFreq
+
+%freq Hess2ElFlags 1,2,2,1
+      end
+
+
+%pal
+nprocs 36    # parallel execution
+end
+
+% maxcore 3000
+
+* xyz 0 1
+8               -0.000001   -0.000001   -0.379301
+1                0.772209   -0.000004    0.189648
+1               -0.772207    0.000004    0.189653
+*
+

@@ -1,0 +1,2 @@
+the number of vibrations for CO2 molecule should be 4 instead of 3 (linear molecule: 3N-5)
+

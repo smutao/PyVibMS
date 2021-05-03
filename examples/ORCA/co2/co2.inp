@@ -1,0 +1,21 @@
+! BP def2-SVP RI def2/J  TightSCF Grid5 NoFinalGrid
+! Opt
+! NumFreq
+
+%freq CentralDiff true
+      Increment 0.005
+      end
+
+
+%pal
+nprocs 36    # parallel execution
+end
+
+% maxcore 3000
+
+* xyz 0 1
+ 6                -0.000000   -0.000000    0.000000
+ 8                 0.000004    0.000002    1.143617
+ 8                -0.000004   -0.000002   -1.143617
+*
+

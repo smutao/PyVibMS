@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>530</width>
+    <width>514</width>
     <height>707</height>
    </rect>
   </property>
@@ -211,7 +211,7 @@
        </item>
        <item>
         <property name="text">
-         <string>ORCA 4</string>
+         <string>ORCA 4 (.hess file)</string>
         </property>
        </item>
       </widget>
