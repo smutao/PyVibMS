@@ -1,0 +1,43 @@
+$comment
+  water freq 
+$end
+
+$molecule
+0 1
+ O     -0.000001   -0.000001   -0.408455
+ H      0.758758   -0.000004    0.204225
+ H     -0.758756    0.000004    0.204230
+$end
+
+
+
+$rem
+MEM_TOTAL  100000
+BASIS cc-pVDZ
+METHOD b3lyp
+xc_grid 75000302
+UNRESTRICTED FALSE
+JOBTYPE   opt
+THRESH 14
+SCF_CONVERGENCE 10
+$end
+
+@@@
+$molecule
+   READ
+$end
+
+
+$rem
+MEM_TOTAL  100000
+BASIS cc-pVDZ
+METHOD b3lyp
+xc_grid 75000302
+UNRESTRICTED FALSE
+JOBTYPE   freq
+THRESH 14
+SCF_CONVERGENCE 10
+$end
+
+
+

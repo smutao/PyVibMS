@@ -1,0 +1,24 @@
+$comment
+  co2 freq 
+$end
+
+$molecule
+0 1
+C     -0.000000    0.000000   -0.000000
+O      0.000004    0.000002    1.174865
+O     -0.000004   -0.000002   -1.174865
+$end
+
+
+
+$rem
+MEM_TOTAL  100000
+BASIS cc-pVDZ
+METHOD MP2
+xc_grid 75000302
+UNRESTRICTED FALSE
+JOBTYPE   freq
+THRESH 14
+SCF_CONVERGENCE 10
+$end
+

@@ -102,6 +102,53 @@ def count_atom_xtb(container):
     return nvib,natom
  
 
+def count_atom_qchem(container):
+    nvib = 0
+    flag_1="X      Y      Z "
+    flag_2="TransDip"
+    flag_3="Frequency:"
+    istop = 0
+    natom = 0
+    freq=[]
+    sym=[]     
+    for i in range(len(container)):
+        line = container[i]  
+        if flag_3 in line:
+           if len(line) > 67:
+              nvib = nvib + 3
+              freq.append(round(float(line.split()[1]),1))
+              freq.append(round(float(line.split()[2]),1))
+              freq.append(round(float(line.split()[3]),1))
+              sym.append("a")
+              sym.append("a")
+              sym.append("a")
+           elif len(line) >45:
+              nvib = nvib + 2
+              freq.append(round(float(line.split()[1]),1))
+              freq.append(round(float(line.split()[2]),1))
+              sym.append("a")
+              sym.append("a")
+           else:
+              nvib = nvib + 1
+              freq.append(round(float(line.split()[1]),1))
+              sym.append("a")
+ 
+        #
+        if flag_1 in line and istop != -1:
+           istop = 1
+           continue
+        if istop == 1:
+           if flag_2 in line:
+              istop = -1
+           else:
+              natom = natom + 1 
+           continue 
+ 
+    #
+    #print(nvib,natom)    
+    return nvib,natom,freq,sym
+
+
 def count_atom(container):
     # possible issue: Nvib=3 or 1 
     nvib = 0
@@ -289,7 +336,46 @@ def extract_mode_orca(container,nvib,freq_idx):
     return mode_raw
 
 
-
+def extract_mode_qchem(container,natom,nvib):
+    mode_grid=[]
+    mode_raw = []
+    flag_1 = "X      Y      Z"
+    lab =0
+    for i in range(len(container)):
+        line = container[i]
+        if flag_1 in line: 
+           lab = 1
+           continue
+        if lab>0 and lab<=natom: 
+           b = line.split()[1:] 
+           b = [float(j) for j in b]
+           mode_grid.append(b)
+           lab = lab + 1
+           continue 
+        if lab>natom:
+           lab=0
+    #
+    #print(mode_grid)
+    for i in range(nvib):
+        row = i/3     # 0...nvib-1
+        row = int(row)
+        col = i%3     # 0,1,2  
+        this_vib = []
+      
+        row_start = row*natom  #  0,natom,natom*2
+        col_start = col*3     # 0,3,6 
+        for j in range(natom):
+            # 
+            per_line=[]
+            per_line.append(mode_grid[row_start+j][col_start])
+            per_line.append(mode_grid[row_start+j][col_start+1])
+            per_line.append(mode_grid[row_start+j][col_start+2])
+            this_vib.append(per_line) 
+    #
+        mode_raw.append(this_vib)
+    #print(mode_raw)
+    return mode_raw
+ 
 
 def extract_mode_xtb(container,natom,nvib):
     mode_raw = []
@@ -564,6 +650,37 @@ def parse_xtb(path):
 
     return freqs,modes,syms
 
+def parse_qchem(path):
+
+    flag_1 = "INFRARED INTENSITIES"
+    flag_2 = "STANDARD THERMODYNAMIC"
+    switch_1 = 0
+    container = []
+
+    with open(path) as f:
+         for line in f:
+             if flag_1 in line:
+                switch_1 = 1
+                continue
+             if switch_1 >=1 and switch_1 <=4:
+                switch_1 = switch_1 + 1
+                continue
+             if switch_1 == 5:
+                if flag_2 in line:
+                   switch_1 = -10
+                else:
+                   container.append(line)
+  
+
+    #print(container)
+    nvib,natom,freqs,syms = count_atom_qchem(container)
+    modes = []
+    modes = extract_mode_qchem(container,natom,nvib)
+   
+    return freqs,modes,syms 
+
+
+
 def parse_g16(path): # obtain vibration from G16 output 
     
 
@@ -832,7 +949,7 @@ global_this_vib_index = 0 # current index of vibration in the table
 
 
 global_xyz = []
-global_program = 0 # 0 - xyz, 1 - Gaussian, 2 - VASP, 3 - CRYSTAL
+global_program = 0 # 0 - xyz, 1 - Gaussian, 2 - VASP, 3 - CRYSTAL, 4 - Q-Chem
                    # 6 - xtb, 7 - ORCA
 
 global_periodic_dimension = 0 
@@ -1754,6 +1871,65 @@ def run_plugin_gui():
  
         return
 
+    def load_qchem_xyz(path,obj_name):
+        flag_1 = "    I     Atom           X                Y                Z"
+        flag_2 = '-------------------------'
+
+        elem = []
+        elem_n = []
+        coor = [] 
+
+        lab = 0
+        have_full_elem = 0
+        info_collects = []
+        with open(path) as f:
+             for line in f:
+                 if flag_1 in line: 
+                     lab = 1
+                     continue 
+                 if lab == 1:
+                    lab = 2
+                    this_geom = []
+                    continue
+                 if lab == 2:
+                    #this_geom = []
+                    if flag_2 in line:
+                       lab = 0
+                       have_full_elem = 1
+                       info_collects.append( this_geom )
+                       continue 
+                    #
+                    if have_full_elem == 0:
+                       e = line.split()[1]
+                       elem.append( e )
+                    x = str( line.split()[2] )
+                    y = str( line.split()[3] )
+                    z = str( line.split()[4] )
+                    this_geom.append([x,y,z])
+
+                    continue 
+
+        #
+        #print(elem)
+        coor = info_collects[-1]
+        #print(coor)
+
+        natom = len(elem)
+        
+        f1 = open("qchem_geom_pymol_long_filename_lol.xyz","w")
+        f1.write(str(natom)+"\n"+"title\n")
+        for i in range(natom):
+            f1.write(elem[i]+" ")
+            f1.write(coor[i][0] + " ")
+            f1.write(coor[i][1] + " ")
+            f1.write(coor[i][2] + "\n")
+        f1.close()
+
+        cmd.load("qchem_geom_pymol_long_filename_lol.xyz",obj_name)
+        os.remove("qchem_geom_pymol_long_filename_lol.xyz")
+
+     
+
 
 
     def load_g16_xyz(path,obj_name):
@@ -1976,7 +2152,15 @@ def run_plugin_gui():
               
               table_act()
 
-
+        if global_program == 4:
+           # Q-Chem output file
+           load_qchem_xyz(xyz_file_path,"geom")
+           set_valence_obj("geom",1)
+           
+           if form.check_contain_vib.isChecked():
+              global_freqs,global_modes,global_syms = parse_qchem(xyz_file_path) 
+              table_act()
+ 
 
         if global_program == 6:
            # xtb g98.out file

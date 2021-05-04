@@ -1,0 +1,574 @@
+You are running Q-Chem version: 5.1.0
+
+#
+# job setting
+#
+local host:  m003
+current dir: /users/yunwent/scratch/test_qchem
+input file:  co2.inp
+output file: 
+nprocs     : 36
+nthreads   : 1
+#
+# qchem installation setting
+#
+QC:          /hpc/applications/q-chem/5.1
+QCAUX:       /hpc/applications/q-chem/5.1/qcaux
+QCPROG:      /hpc/applications/q-chem/5.1/exe/qcprog.exe
+QCPROG_S:    /hpc/applications/q-chem/5.1/exe/qcprog.exe_s
+PARALLEL:    -DPARALLEL
+QCMPI:       slurm
+#
+# qchem directory setting
+#
+qcrun:       qchem26432
+QCSCRATCH:   /users/yunwent/scratch/qchem_tmp
+QCLOCALSCR:  
+QCTMPDIR:    /users/yunwent/scratch/qchem_tmp
+QCFILEPREF:  /users/yunwent/scratch/qchem_tmp/qchem26432
+QCSAVEDIR:   
+workdirs:    /users/yunwent/scratch/qchem_tmp/qchem26432.0 -- /users/yunwent/scratch/qchem_tmp/qchem26432.35
+workdir0:    /users/yunwent/scratch/qchem_tmp/qchem26432.0
+partmpdirs =  
+#
+# parallel setting
+#
+QCRSH:           ssh
+QCMPI:           slurm
+QCMPIRUN:        srun
+QCMACHINEFILE:   m003
+QCMACHINEFILE m003 cannot be found
+
+#
+# env setting
+#
+exported envs:   QC QCAUX QCSCRATCH QCRUNNAME QCFILEPREF QCPROG QCPROG_S GUIFILE
+
+Running Job 1 of 1 co2.inp
+qchem co2.inp_26432.0 /users/yunwent/scratch/qchem_tmp/qchem26432/ 36
+srun --mpi=pmi2 -n 36 /hpc/applications/q-chem/5.1/exe/qcprog.exe co2.inp_26432.0 /users/yunwent/scratch/qchem_tmp/qchem26432/
+
+Process 2 of 36 is on m003 - thread support 0
+Process 3 of 36 is on m003 - thread support 0
+Process 35 of 36 is on m003 - thread support 0
+Process 0 of 36 is on m003 - thread support 0
+Process 1 of 36 is on m003 - thread support 0
+Process 5 of 36 is on m003 - thread support 0
+Process 6 of 36 is on m003 - thread support 0
+Process 4 of 36 is on m003 - thread support 0
+initial socket setup ...start
+initial socket setup ...done 
+now start server 0 ... 
+Check license passed
+
+                  Welcome to Q-Chem
+     A Quantum Leap Into The Future Of Chemistry
+
+
+ Q-Chem 5.1, Q-Chem, Inc., Pleasanton, CA (2018)
+
+ Yihan Shao,  Zhengting Gan,  E. Epifanovsky,  A. T. B. Gilbert,  M. Wormit,  
+ J. Kussmann,  A. W. Lange,  A. Behn,  Jia Deng,  Xintian Feng,  D. Ghosh,  
+ M. Goldey,  P. R. Horn,  L. D. Jacobson,  I. Kaliman,  T. Kus,  A. Landau,  
+ Jie Liu,  E. I. Proynov,  R. M. Richard,  R. P. Steele,  E. J. Sundstrom,  
+ H. L. Woodcock III,  P. M. Zimmerman,  D. Zuev,  B. Albrecht,  E. Alguire,  
+ S. A. Baeppler,  D. Barton,  Z. Benda,  Y. A. Bernard,  E. J. Berquist,  
+ K. B. Bravaya,  H. Burton,  D. Casanova,  Chun-Min Chang,  Yunqing Chen,  
+ A. Chien,  K. D. Closser,  M. P. Coons,  S. Coriani,  S. Dasgupta,  
+ A. L. Dempwolff,  M. Diedenhofen,  Hainam Do,  R. G. Edgar,  Po-Tung Fang,  
+ S. Faraji,  S. Fatehi,  Qingguo Feng,  K. D. Fenk,  J. Fosso-Tande,  
+ Qinghui Ge,  A. Ghysels,  G. Gidofalvi,  J. Gomes,  J. Gonthier,  A. Gunina,  
+ D. Hait,  M. W. D. Hanson-Heine,  P. H. P. Harbach,  A. W. Hauser,  
+ J. E. Herr,  E. G. Hohenstein,  Z. C. Holden,  Kerwin Hui,  B. C. Huynh,  
+ T.-C. Jagau,  Hyunjun Ji,  B. Kaduk,  K. Khistyaev,  Jaehoon Kim,  
+ P. Klunzinger,  K. Koh,  D. Kosenkov,  L. Koulias,  T. Kowalczyk,  
+ C. M. Krauter,  A. Kunitsa,  Ka Un Lao,  A. Laurent,  K. V. Lawler,  
+ Joonho Lee,  D. Lefrancois,  S. Lehtola,  D. S. Levine,  Yi-Pei Li,  
+ You-Sheng Lin,  Fenglai Liu,  E. Livshits,  A. Luenser,  P. Manohar,  
+ E. Mansoor,  S. F. Manzer,  Shan-Ping Mao,  Yuezhi Mao,  N. Mardirossian,  
+ A. V. Marenich,  T. Markovich,  L. A. Martinez-Martinez,  S. A. Maurer,  
+ N. J. Mayhall,  S. C. McKenzie,  J.-M. Mewes,  A. F. Morrison,  
+ J. W. Mullinax,  K. Nanda,  T. S. Nguyen-Beck,  R. Olivares-Amaya,  
+ J. A. Parkhill,  T. M. Perrine,  F. Plasser,  P. Pokhilko,  S. Prager,  
+ A. Prociuk,  E. Ramos,  D. R. Rehn,  F. Rob,  M. Schneider,  N. Sergueev,  
+ S. M. Sharada,  S. Sharma,  D. W. Small,  T. Stauch,  T. Stein,  
+ Yu-Chuan Su,  A. J. W. Thom,  A. Tkatchenko,  T. Tsuchimochi,  N. M. Tubman,  
+ L. Vogt,  M. L. Vidal,  O. Vydrov,  M. A. Watson,  J. Wenzel,  
+ M. de Wergifosse,  T. A. Wesolowski,  A. White,  J. Witte,  A. Yamada,  
+ Jun Yang,  K. Yao,  S. Yeganeh,  S. R. Yost,  Zhi-Qiang You,  A. Zech,  
+ Igor Ying Zhang,  Xing Zhang,  Yan Zhao,  Ying Zhu,  B. R. Brooks,  
+ G. K. L. Chan,  C. J. Cramer,  M. S. Gordon,  W. J. Hehre,  A. Klamt,  
+ M. W. Schmidt,  C. D. Sherrill,  D. G. Truhlar,  A. Aspuru-Guzik,  R. Baer,  
+ A. T. Bell,  N. A. Besley,  Jeng-Da Chai,  R. A. DiStasio Jr.,  A. Dreuw,  
+ B. D. Dunietz,  T. R. Furlani,  Chao-Ping Hsu,  Yousung Jung,  Jing Kong,  
+ D. S. Lambrecht,  WanZhen Liang,  C. Ochsenfeld,  V. A. Rassolov,  
+ L. V. Slipchenko,  J. E. Subotnik,  T. Van Voorhis,  J. M. Herbert,  
+ A. I. Krylov,  P. M. W. Gill,  M. Head-Gordon
+
+ Contributors to earlier versions of Q-Chem not listed above: 
+ R. D. Adamson,  B. Austin,  J. Baker,  G. J. O. Beran,  K. Brandhorst,  
+ S. T. Brown,  E. F. C. Byrd,  A. K. Chakraborty,  C.-L. Cheng,  
+ Siu Hung Chien,  D. M. Chipman,  D. L. Crittenden,  H. Dachsel,  
+ R. J. Doerksen,  A. D. Dutoi,  L. Fusti-Molnar,  W. A. Goddard III,  
+ A. Golubeva-Zadorozhnaya,  S. R. Gwaltney,  G. Hawkins,  A. Heyden,  
+ S. Hirata,  G. Kedziora,  F. J. Keil,  C. Kelley,  Jihan Kim,  R. A. King,  
+ R. Z. Khaliullin,  P. P. Korambath,  W. Kurlancheek,  A. M. Lee,  M. S. Lee,  
+ S. V. Levchenko,  Ching Yeh Lin,  D. Liotard,  R. C. Lochan,  I. Lotan,  
+ P. E. Maslen,  N. Nair,  D. P. O'Neill,  D. Neuhauser,  E. Neuscamman,  
+ C. M. Oana,  R. Olson,  B. Peters,  R. Peverati,  P. A. Pieniazek,  
+ Y. M. Rhee,  J. Ritchie,  M. A. Rohrdanz,  E. Rosta,  N. J. Russ,  
+ H. F. Schaefer III,  N. E. Schultz,  N. Shenvi,  A. C. Simmonett,  A. Sodt,  
+ D. Stuck,  K. S. Thanthiriwatte,  V. Vanovschi,  Tao Wang,  A. Warshel,  
+ C. F. Williams,  Q. Wu,  X. Xu,  W. Zhang
+
+ Please cite Q-Chem as follows:
+ Y. Shao et al., Mol. Phys. 113, 184-215 (2015)
+ DOI: 10.1080/00268976.2014.952696
+
+ Q-Chem 5.1.0 for Intel X86 EM64T Linux
+
+ Parts of Q-Chem use Armadillo 8.300.2 (Tropical Shenanigans).
+ http://arma.sourceforge.net/
+
+ Q-Chem begins on Mon May  3 16:59:10 2021  
+
+Host: 
+0
+
+     Scratch files written to /users/yunwent/scratch/qchem_tmp/qchem26432.0//
+ May118 |scratch|qcdevops|jenkins|workspace|build_RNUM 4883   
+ Parallel job on  36  processors
+Processing $rem in /hpc/applications/q-chem/5.1/config/preferences.
+ MEM_TOTAL  7168 
+Core orbitals will be frozen
+
+
+!!********************************************.
+!!******************Warning*******************.
+!!Desired Analytical derivatives not available.
+!!Finite difference job might take a long time.
+!!********************************************.
+!!********************************************.
+
+
+ 2-order derivative to be evaluated numerically with 1-order analytical derivatives
+
+ Q-Chem warning in module libgen/rem.C, line 5842:
+
+ !!Parallel diagonalization not available.
+
+
+Checking the input file for inconsistencies... 	...done.
+
+--------------------------------------------------------------
+User input:
+--------------------------------------------------------------
+$comment
+co2 freq
+$end
+
+$molecule
+0 1
+C     -0.000000    0.000000   -0.000000
+O      0.000004    0.000002    1.174865
+O     -0.000004   -0.000002   -1.174865
+$end
+
+
+
+$rem
+MEM_TOTAL  100000
+BASIS cc-pVDZ
+METHOD MP2
+xc_grid 75000302
+UNRESTRICTED FALSE
+JOBTYPE   freq
+THRESH 14
+SCF_CONVERGENCE 10
+$end
+
+--------------------------------------------------------------
+ ----------------------------------------------------------------
+             Standard Nuclear Orientation (Angstroms)
+    I     Atom           X                Y                Z
+ ----------------------------------------------------------------
+    1      C       0.0000000000     0.0000000000     0.0000000000
+    2      O      -0.0000000000     0.0000000000     1.1748650000
+    3      O       0.0000000000    -0.0000000000    -1.1748650000
+ ----------------------------------------------------------------
+ Molecular Point Group                 D*h   NOp =***
+ Largest Abelian Subgroup              D2h   NOp =  1
+ Nuclear Repulsion Energy =    57.6531626884 hartrees
+ There are       11 alpha and       11 beta electrons
+ Requested basis set is cc-pVDZ
+ There are 18 shells and 42 basis functions
+
+ Total QAlloc Memory Limit 100000 MB
+ Mega-Array Size       188 MB
+ MEM_STATIC part       192 MB
+
+                       Distance Matrix (Angstroms)
+             C (  1)   O (  2)
+   O (  2)  1.174865
+   O (  3)  1.174865  2.349730
+ 
+ A cutoff of  1.0D-14 yielded    170 shell pairs
+ There are       950 function pairs (      1097 Cartesian)
+ Smallest overlap matrix eigenvalue = 1.81E-02
+ Guess from superposition of atomic densities
+ Warning:  Energy on first SCF cycle will be non-variational
+ SAD guess density has 22.000000 electrons
+
+ -----------------------------------------------------------------------
+  General SCF calculation program by
+  Eric Jon Sundstrom, Paul Horn, Yuezhi Mao, Dmitri Zuev, Alec White,
+  David Stuck, Shaama M.S., Shane Yost, Joonho Lee, David Small,
+  Daniel Levine, Susi Lehtola, Hugh Burton, Evgeny Epifanovsky
+ -----------------------------------------------------------------------
+ Hartree-Fock
+ A restricted SCF calculation will be
+ performed using DIIS
+ SCF converges when DIIS error is below 1.0e-10
+ ---------------------------------------
+  Cycle       Energy         DIIS error
+ ---------------------------------------
+    1    -188.1260952385      1.39e-01  
+    2    -187.5596816663      2.23e-02  
+    3    -187.6111140205      1.50e-02  
+    4    -187.6470737255      1.37e-03  
+    5    -187.6474696351      3.23e-04  
+    6    -187.6475092438      6.27e-05  
+    7    -187.6475111734      1.38e-05  
+    8    -187.6475112309      2.54e-06  
+    9    -187.6475112328      2.42e-07  
+   10    -187.6475112328      1.50e-08  
+   11    -187.6475112328      1.16e-09  
+   12    -187.6475112328      1.31e-10  
+   13    -187.6475112328      1.24e-11  Convergence criterion met
+ ---------------------------------------
+ SCF time:   CPU 0.54s  wall 1.00s 
+ SCF   energy in the final basis set =     -187.6475112328
+ Total energy in the final basis set =     -187.6475112328
+ 
+ Components of the MP2 correlation energy:
+        aaaa  correlation energy =        -0.0683030429 au
+        abab  correlation energy =        -0.3494164769 au
+        bbbb  correlation energy =        -0.0683030429 au
+        non-Brillouin singles    =        -0.0000000000 au
+
+ Total  MP2   correlation energy =                    -0.48602256 au
+        MP2         total energy =                  -188.13353380 au
+  Entering Z-vector solver.
+   1         0           1      0.001056    0.001056
+   2         0           1      0.000273    0.000273
+   3         0           1      0.000082    0.000082
+   4         0           1      0.000014    0.000014
+   5         0           1      0.000002    0.000002
+   6         1           0      0.000000    0.000000    Roots Converged
+ 
+ --------------------------------------------------------------
+ 
+                    Orbital Energies (a.u.)
+ --------------------------------------------------------------
+ 
+ Alpha MOs
+ -- Occupied --
+-20.655 -20.655 -11.476  -1.522  -1.468  -0.796  -0.734  -0.703
+ -0.703  -0.536  -0.536
+ -- Virtual --
+  0.206   0.206   0.247   0.487   0.603   0.603   0.757   0.979
+  1.049   1.128   1.128   1.255   1.255   1.372   1.372   1.424
+  1.559   1.559   1.857   2.326   2.873   2.873   3.006   3.006
+  3.060   3.103   3.103   3.754   3.847   3.847   3.900
+ --------------------------------------------------------------
+ 
+          Ground-State Mulliken Net Atomic Charges
+
+     Atom                 Charge (a.u.)
+  ----------------------------------------
+      1 C                     0.281218
+      2 O                    -0.140609
+      3 O                    -0.140609
+  ----------------------------------------
+  Sum of atomic charges =    -0.000000
+
+ -----------------------------------------------------------------
+                    Cartesian Multipole Moments
+ -----------------------------------------------------------------
+    Charge (ESU x 10^10)
+                -0.0000
+    Dipole Moment (Debye)
+         X      -0.0000      Y      -0.0000      Z      -0.0000
+       Tot       0.0000
+    Quadrupole Moments (Debye-Ang)
+        XX     -14.6919     XY      -0.0000     YY     -14.6919
+        XZ       0.0000     YZ       0.0000     ZZ     -18.7893
+    Octopole Moments (Debye-Ang^2)
+       XXX       0.0000    XXY      -0.0000    XYY       0.0000
+       YYY      -0.0000    XXZ       0.0000    XYZ      -0.0000
+       YYZ       0.0000    XZZ      -0.0000    YZZ       0.0000
+       ZZZ      -0.0000
+    Hexadecapole Moments (Debye-Ang^3)
+      XXXX     -10.8991   XXXY       0.0000   XXYY      -3.6330
+      XYYY       0.0000   YYYY     -10.8991   XXXZ       0.0000
+      XXYZ       0.0000   XYYZ       0.0000   YYYZ       0.0000
+      XXZZ     -18.2067   XYZZ       0.0000   YYZZ     -18.2067
+      XZZZ      -0.0000   YZZZ       0.0000   ZZZZ    -101.3388
+ -----------------------------------------------------------------
+ DrvMan is completing analytic gradient of the MP2 energy
+ MP2 relaxed dipole moment
+            1
+    1  -0.0000000
+    2  -0.0000000
+    3  -0.0000000
+	Magnitude:	 0.000 au	 0.000 Debye
+ MP2 energy read as -188.133534
+ Full Analytical Gradient of MP2 Energy (in au.)
+             1             2             3
+    1    0.00000000    0.00000000   -0.00000000
+    2   -0.00000000    0.00000000    0.00000000
+    3    0.00000000   -0.00451057    0.00451057
+ Gradient time:  CPU 0.02 s  wall 0.03 s
+ ######################################################
+ ######################################################
+ # Starting finite difference calculation for IDERIV  #
+ Finite diff step size:  1.88973e-03 a.u.
+Dipole drv :
+gprntSymmMtrx error report: 
+ Final Hessian.
+            1           2           3           4           5           6
+    1   0.1359322   0.0000000   0.0000000  -0.0679661   0.0000000   0.0000000
+    2   0.0000000   0.1359322   0.0000000   0.0000000  -0.0679661   0.0000000
+    3   0.0000000   0.0000000   1.9964026   0.0000000   0.0000000  -1.0006901
+    4  -0.0679661   0.0000000   0.0000000   0.0329674   0.0000000   0.0000000
+    5   0.0000000  -0.0679661   0.0000000   0.0000000   0.0329674   0.0000000
+    6   0.0000000   0.0000000  -1.0006901   0.0000000   0.0000000   1.0438987
+    7  -0.0679661   0.0000000   0.0000000   0.0349988   0.0000000   0.0000000
+    8   0.0000000  -0.0679661   0.0000000   0.0000000   0.0349988   0.0000000
+    9   0.0000000   0.0000000  -1.0006901   0.0000000   0.0000000  -0.0407199
+            7           8           9
+    1  -0.0679661   0.0000000   0.0000000
+    2   0.0000000  -0.0679661   0.0000000
+    3   0.0000000   0.0000000  -1.0006901
+    4   0.0349988   0.0000000   0.0000000
+    5   0.0000000   0.0349988   0.0000000
+    6   0.0000000   0.0000000  -0.0407199
+    7   0.0329674   0.0000000   0.0000000
+    8   0.0000000   0.0329674   0.0000000
+    9   0.0000000   0.0000000   1.0438987
+ ----------------------------------------------------------------
+             Standard Nuclear Orientation (Angstroms)
+    I     Atom           X                Y                Z
+ ----------------------------------------------------------------
+    1      C       0.0000000000     0.0000000000     0.0000000000
+    2      O      -0.0000000000     0.0000000000     1.1748650000
+    3      O       0.0000000000    -0.0000000000    -1.1748650000
+ ----------------------------------------------------------------
+ Nuclear Repulsion Energy =    57.6531626884 hartrees
+ There are       11 alpha and       11 beta electrons
+ old dipole drv.
+            1           2           3           4           5           6
+    1   0.4557840   0.0000000   0.0000000  -0.2278925   0.0000000   0.0000000
+    2  -0.0000000   0.4557840  -0.0000000   0.0000000  -0.2278925  -0.0000000
+    3   0.0000000   0.0000000   2.0717816  -0.0000000   0.0000000  -1.0601703
+            7           8           9
+    1  -0.2278925   0.0000000   0.0000000
+    2  -0.0000000  -0.2278925  -0.0000000
+    3   0.0000000  -0.0000000  -1.0601703
+ New transposed dipole drv.
+            1           2           3
+    1   0.4557840  -0.0000000   0.0000000
+    2   0.0000000   0.4557840   0.0000000
+    3   0.0000000  -0.0000000   2.0717816
+    4  -0.2278925   0.0000000  -0.0000000
+    5   0.0000000  -0.2278925   0.0000000
+    6   0.0000000  -0.0000000  -1.0601703
+    7  -0.2278925  -0.0000000   0.0000000
+    8   0.0000000  -0.2278925  -0.0000000
+    9   0.0000000  -0.0000000  -1.0601703
+FINAL TENSOR RESULT:
+Order 2, Length 9
+    Atom      X          Y          Z
+     1 Order 1, Length 9
+    Atom      X          Y          Z
+     1    1.359321602460402e-01   0.000000000000000e+00   0.000000000000000e+00
+     2   -6.796613223481943e-02   0.000000000000000e+00   0.000000000000000e+00
+     3   -6.796613223460829e-02   0.000000000000000e+00   0.000000000000000e+00
+
+Order 1, Length 9
+    Atom      X          Y          Z
+     1    0.000000000000000e+00   1.359321582566299e-01   0.000000000000000e+00
+     2    0.000000000000000e+00  -6.796613161902773e-02   0.000000000000000e+00
+     3    0.000000000000000e+00  -6.796613161909382e-02   0.000000000000000e+00
+
+Order 1, Length 9
+    Atom      X          Y          Z
+     1    0.000000000000000e+00   0.000000000000000e+00   1.996402580503443e+00
+     2    0.000000000000000e+00   0.000000000000000e+00  -1.000690056168196e+00
+     3    0.000000000000000e+00   0.000000000000000e+00  -1.000690056131408e+00
+
+
+     2 Order 1, Length 9
+    Atom      X          Y          Z
+     1   -6.796613223481943e-02   0.000000000000000e+00   0.000000000000000e+00
+     2    3.296742996379153e-02   0.000000000000000e+00   0.000000000000000e+00
+     3    3.499875438287157e-02   0.000000000000000e+00   0.000000000000000e+00
+
+Order 1, Length 9
+    Atom      X          Y          Z
+     1    0.000000000000000e+00  -6.796613161902773e-02   0.000000000000000e+00
+     2    0.000000000000000e+00   3.296742984543227e-02   0.000000000000000e+00
+     3    0.000000000000000e+00   3.499875426465184e-02   0.000000000000000e+00
+
+Order 1, Length 9
+    Atom      X          Y          Z
+     1    0.000000000000000e+00   0.000000000000000e+00  -1.000690056168196e+00
+     2    0.000000000000000e+00   0.000000000000000e+00   1.043898730671400e+00
+     3    0.000000000000000e+00   0.000000000000000e+00  -4.071990857178273e-02
+
+
+     3 Order 1, Length 9
+    Atom      X          Y          Z
+     1   -6.796613223460829e-02   0.000000000000000e+00   0.000000000000000e+00
+     2    3.499875438287157e-02   0.000000000000000e+00   0.000000000000000e+00
+     3    3.296742996396319e-02   0.000000000000000e+00   0.000000000000000e+00
+
+Order 1, Length 9
+    Atom      X          Y          Z
+     1    0.000000000000000e+00  -6.796613161909382e-02   0.000000000000000e+00
+     2    0.000000000000000e+00   3.499875426465184e-02   0.000000000000000e+00
+     3    0.000000000000000e+00   3.296742984553784e-02   0.000000000000000e+00
+
+Order 1, Length 9
+    Atom      X          Y          Z
+     1    0.000000000000000e+00   0.000000000000000e+00  -1.000690056131408e+00
+     2    0.000000000000000e+00   0.000000000000000e+00  -4.071990857178273e-02
+     3    0.000000000000000e+00   0.000000000000000e+00   1.043898730714641e+00
+
+
+
+
+ # Finishing finite difference calculation for IDERIV #
+ ######################################################
+ ######################################################
+ Requested basis set is cc-pVDZ
+ There are 18 shells and 42 basis functions
+ **********************************************************************
+ **                                                                  **
+ **                       VIBRATIONAL ANALYSIS                       **
+ **                       --------------------                       **
+ **                                                                  **
+ **        VIBRATIONAL FREQUENCIES (CM**-1) AND NORMAL MODES         **
+ **     FORCE CONSTANTS (mDYN/ANGSTROM) AND REDUCED MASSES (AMU)     **
+ **                  INFRARED INTENSITIES (KM/MOL)                   **
+ **                                                                  **
+ **********************************************************************
+ 
+
+ Mode:                 1                      2                      3
+ Frequency:       641.57                 641.57                1338.61
+ Force Cnst:      3.1230                 3.1230                16.8865
+ Red. Mass:      12.8774                12.8774                15.9949
+ IR Active:          YES                    YES                    YES
+ IR Intens:       23.208                 23.208                  0.000
+ Raman Active:       YES                    YES                    YES
+               X      Y      Z        X      Y      Z        X      Y      Z
+ C          0.000  0.883  0.000    0.883 -0.000  0.000   -0.000  0.000 -0.000
+ O         -0.000 -0.331  0.000   -0.331  0.000  0.000    0.000 -0.000 -0.707
+ O         -0.000 -0.331  0.000   -0.331  0.000  0.000    0.000  0.000  0.707
+ TransDip   0.000  0.154  0.000    0.154 -0.000 -0.000    0.000 -0.000 -0.000
+
+ Mode:                 4
+ Frequency:      2460.39
+ Force Cnst:     45.9289
+ Red. Mass:      12.8774
+ IR Active:          YES
+ IR Intens:      485.662
+ Raman Active:       YES
+               X      Y      Z        X      Y      Z        X      Y      Z
+ C          0.000  0.000  0.883
+ O          0.000 -0.000 -0.331
+ O          0.000  0.000 -0.331
+ TransDip  -0.000 -0.000  0.706
+
+ STANDARD THERMODYNAMIC QUANTITIES AT   298.15 K  AND     1.00 ATM
+
+   This Molecule has  0 Imaginary Frequencies
+   Zero point vibrational energy:        7.265 kcal/mol
+
+   Atom    1 Element C  Has Mass   12.00000
+   Atom    2 Element O  Has Mass   15.99491
+   Atom    3 Element O  Has Mass   15.99491
+   Molecular Mass:    43.989820 amu
+   Principal axes and moments of inertia in amu*Bohr^2:
+                             1           2           3
+    Eigenvalues --       -0.00000   157.68321   157.68321
+          X              -0.00000     0.97619     0.21693
+          Y               0.00000    -0.21693     0.97619
+          Z               1.00000     0.00000     0.00000
+   Rotational Symmetry Number is   2
+   The Molecule is a Symmetric Top
+   Translational Enthalpy:        0.889 kcal/mol
+   Rotational Enthalpy:           0.592 kcal/mol
+   Vibrational Enthalpy:          7.445 kcal/mol
+   gas constant (RT):             0.592 kcal/mol
+   Translational Entropy:        37.270  cal/mol.K
+   Rotational Entropy:           13.123  cal/mol.K
+   Vibrational Entropy:           0.790  cal/mol.K
+
+   Total Enthalpy:                9.519 kcal/mol
+   Total Entropy:                51.183  cal/mol.K
+Archival summary:
+1\1\m003\FREQ\MP2\BasisUnspecified\21\yunwent\MonMay316:59:472021MonMay316:59:472021\0\\#,FREQ,MP2,BasisUnspecified,\\0,1\C\O,1,1.17487\O,1,1.17487,2,180\\HF=-187.647511\MP2=-188.133534\\@
+
+ Total job time:  36.28s(wall), 33.98s(cpu) 
+ Mon May  3 16:59:47 2021
+
+        *************************************************************
+        *                                                           *
+        *  Thank you very much for using Q-Chem.  Have a nice day.  *
+        *                                                           *
+        *************************************************************
+
+
+0 sent ACK to 0 
+now end server 0 ... 
+cleanup process ... done
+remove work dirs /users/yunwent/scratch/qchem_tmp/qchem26432.0 -- /users/yunwent/scratch/qchem_tmp/qchem26432.35
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.0
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.1
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.2
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.3
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.4
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.5
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.6
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.7
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.8
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.9
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.10
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.11
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.12
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.13
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.14
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.15
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.16
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.17
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.18
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.19
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.20
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.21
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.22
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.23
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.24
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.25
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.26
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.27
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.28
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.29
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.30
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.31
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.32
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.33
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.34
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432.35
+rm -rf /users/yunwent/scratch/qchem_tmp/qchem26432
