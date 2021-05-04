@@ -5,6 +5,17 @@ PyVibMS
 =========================
 A PyMOL plugin for visualizing vibrations in molecules and solids
 
+Updates
+-----
+May 3, 2021 - Add support for ORCA 4 and Q-Chem 4/5
+
+May 2, 2021 - Add support for Prof. Grimme's xtb program  
+
+
+
+User Guide
+------
+
 介绍PyVibMS使用的中文文章 请前往 http://bbs.keinsci.com/thread-22835-1-1.html
 
 Our paper on PyVibMS is now published. 🎉 
