@@ -2203,7 +2203,7 @@ def run_plugin_gui():
         
         #play_vib(xyz_coor,mode_1)
         if global_program == 1 or global_program == 2 or global_program == 3 or global_program == 5 \
-           or global_program == 6 or global_program == 7:
+           or global_program == 4 or global_program == 6 or global_program == 7:
             if len(global_modes) != 0:
                global_this_vib_index = 0 
                play_vib(xyz_coor,global_modes[0]) # prepare the coordinates to simulate animations 
