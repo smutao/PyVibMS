@@ -1,0 +1,26 @@
+***,test
+memory,300,m 
+geometry={
+C
+H 1 B1
+H 1 B1 2 A2
+H 1 B1 2 A2 3  D3
+H 1 B1 2 A2 3 -D3
+}
+
+
+B1   =        1.0 angstrom
+A2   =      109.47122063
+D3   =      120.0
+
+basis=vdz
+
+{rks,b3lyp3;}
+
+{optg;active,B1}
+
+{frequencies,print=1;print,hessian}
+---
+
+
+

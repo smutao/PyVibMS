@@ -1,0 +1,11 @@
+H2O without symmetry
+
+ $contrl
+   qcprog="cfour"
+   ifpyvibms=.true.
+ $end
+
+ $qcdata
+   fchk="h2o.out"
+   geom="GRD"
+ $end

@@ -1,0 +1,10 @@
+a test job
+
+ $contrl
+   qcprog="molpro"
+   ifpyvibms=.true.
+ $end
+
+ $qcdata
+   fchk="ch4.out"
+ $end

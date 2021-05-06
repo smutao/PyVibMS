@@ -1,0 +1,111 @@
+ =======================================================================================================================
+       _/     _/                _/     _/            _/     _/
+      _/     _/            _/  _/|  _/_/            _/     _/  _/  _/        UniMoVib:          A unified interface for
+     _/     _/   _/_/_/       _/ |_/ _/   _/_/_/   _/     _/      _/           molecular harmonic vibrational frequency
+    _/     _/  _/    _/  _/  _/  _/ _/  _/    _/  _/     _/  _/  _/_/_/        calculations.
+   _/     _/  _/    _/  _/  _/     _/  _/    _/  _/    _/   _/  _/   _/
+  _/     _/  _/    _/  _/  _/     _/  _/    _/   _/  _/    _/  _/   _/       Ver. 1.4.1, May 02, 2021
+   _/_/_/   _/    _/  _/  _/     _/   _/_/_/     _/_/     _/  _/_/_/         https://github.com/zorkzou/UniMoVib
+ =======================================================================================================================
+
+
+ QC Program:      CFOUR
+ FCHK file:       h2o.out
+ GEOM file:       GRD
+
+
+ Cartesian coordinates (Angstrom)
+ ------------------------------------------------------------------------------------------------------------
+   No.   Atom    ZA                 X             Y             Z                Mass               IR charge
+ ------------------------------------------------------------------------------------------------------------
+     1    H       1            0.00000000   -0.75387931    0.52702031            1.00782503            0.3359
+     2    O       8            0.00000000    0.00000000   -0.06641414           15.99491463           -0.6718
+     3    H       1            0.00000000    0.75387931    0.52702031            1.00782503            0.3359
+ ------------------------------------------------------------------------------------------------------------
+ Reference of IR charge:
+ A. Milani, M. Tommasini, C. Castiglioni, Theor. Chem. Acc. 131, 1139 (2012).
+
+
+ <<< POINT GROUP SYMMETRY >>>
+ Electronic Wavefunctions      :  C2v 
+ Nuclear & Total Wavefunctions :  C2v 
+
+
+ ************************************
+ ***  Properties of Normal Modes  ***
+ ************************************
+
+ Results of vibrations:
+ Normal frequencies (cm^-1), reduced masses (AMU), force constants (mDyn/A), IR intensities (km/mol)
+
+                                                   1                                 2                                 3
+          Irreps                                  A1                                A1                                B2
+     Frequencies                           1668.8816                         3840.9207                         3945.5296
+  Reduced masses                              1.0826                            1.0453                            1.0809
+ Force constants                              1.7765                            9.0855                            9.9143
+  IR intensities                             62.9912                            3.2140                           39.0254
+        Atom  ZA               X         Y         Z             X         Y         Z             X         Y         Z
+           1   1         0.00000  -0.42835  -0.56038       0.00000   0.58430  -0.39665       0.00000  -0.55427   0.43631
+           2   8         0.00000   0.00000   0.07062       0.00000   0.00000   0.04999       0.00000   0.06985  -0.00000
+           3   1         0.00000   0.42835  -0.56038       0.00000  -0.58432  -0.39667       0.00000  -0.55425  -0.43629
+
+ Results of translations and rotations:
+
+                                                   1                                 2                                 3
+          Irreps                                  B1                                B2                                A1
+     Frequencies                              0.0000                           -1.2113                           -1.2113
+  Reduced masses                              6.0035                            6.0035                            6.0035
+ Force constants                              0.0000                           -0.0000                           -0.0000
+  IR intensities                              0.0000                            0.0000                            0.0000
+        Atom  ZA               X         Y         Z             X         Y         Z             X         Y         Z
+           1   1         0.57735   0.00000   0.00000       0.00000   0.57735   0.00000       0.00000   0.00000   0.57735
+           2   8         0.57735   0.00000   0.00000       0.00000   0.57735   0.00000       0.00000   0.00000   0.57735
+           3   1         0.57735   0.00000   0.00000       0.00000   0.57735   0.00000       0.00000   0.00000   0.57735
+
+                                                   4                                 5                                 6
+          Irreps                                  B1                                A2                                B2
+     Frequencies                              0.0000                            0.0000                            3.0636
+  Reduced masses                              1.1259                            1.0078                            1.0468
+ Force constants                              0.0000                            0.0000                            0.0000
+  IR intensities                            245.8245                            0.0000                           87.2583
+        Atom  ZA               X         Y         Z             X         Y         Z             X         Y         Z
+           1   1         0.70432   0.00000   0.00000       0.70711   0.00000   0.00000       0.00000  -0.40461  -0.57878
+           2   8        -0.08876   0.00000   0.00000       0.00000   0.00000   0.00000       0.00000   0.05099   0.00000
+           3   1         0.70432   0.00000   0.00000      -0.70711   0.00000   0.00000       0.00000  -0.40461   0.57878
+
+
+ *********************************************
+ ***   Thermal Contributions to Energies   ***
+ *********************************************
+
+ Molecular mass            :        18.010565    AMU
+ Electronic total energy   :         0.000000    Hartree
+ Scaling factor of Freq.   :         1.000000
+ Tolerance of scaling      :         0.000000    cm^-1
+ Rotational symmetry number:         2
+ The C2v  point group is used to calculate rotational entropy.
+
+ Principal axes and moments of inertia in atomic units:
+                                     1                   2                   3
+     Eigenvalues --                  2.251194            4.090878            6.342072
+           X                         0.000000            0.000000            1.000000
+           Y                         1.000000            0.000000            0.000000
+           Z                         0.000000            1.000000            0.000000
+
+ Rotational temperatures            38.474605           21.172427           13.657021    Kelvin
+ Rot. constants A, B, C             26.741222           14.715591            9.492116    cm^-1
+                                   801.681656          441.162315          284.566481    GHz
+
+
+ #   1    Temperature =       298.15000 Kelvin         Pressure =         1.00000 Atm
+ ====================================================================================
+
+ Thermal correction energies                              Hartree            kcal/mol
+ Zero-point Energy                          :            0.021541           13.517075
+ Thermal correction to Energy               :            0.024376           15.296050
+ Thermal correction to Enthalpy             :            0.025320           15.888536
+ Thermal correction to Gibbs Free Energy    :            0.003901            2.447656
+ ====================================================================================
+
+
+ UniMoVib job terminated correctly, Wed May  5 09:30:51 2021
