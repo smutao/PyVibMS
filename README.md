@@ -7,6 +7,8 @@ A PyMOL plugin for visualizing vibrations in molecules and solids
 
 Updates
 -----
+May 5, 2021 - Add examples for [UniMoVib](https://github.com/zorkzou/UniMoVib/) which can generate XYZ and mode files for PyVibMS
+
 May 3, 2021 - Add support for ORCA 4 and Q-Chem 4/5
 
 May 2, 2021 - Add support for Prof. Grimme's xtb program  
@@ -78,6 +80,8 @@ Natively supported
 
 Generically supported
 ----
+
+The following packages are supported with the help of [UniMoVib](https://github.com/zorkzou/UniMoVib/).
 
 * [Adf](http://www.scm.com/)
 * [BDF](http://182.92.69.169:7226)
