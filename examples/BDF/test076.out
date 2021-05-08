@@ -1,0 +1,3891 @@
+#!awk.bdf.output
+====================== BDF version information ============================
+commit a27261fc82dc548e10c9e040e0f30102cc35beca
+Merge: 1dfb980 f1528cc
+Author: Zikuan Wang <wzkchem5@pku.edu.cn>
+Date:   Mon Jan 18 22:21:03 2021 +0800
+
+    Merge branch 'master' of 182.92.69.169:/opt/gitroot/bdf-pkg
+===========================================================================
+BDFHOME =  /home/wzk/work/bdf/bdf-pkg
+BDF_TMPDIR = /tmp
+BDF_MPIRUN =  None
+BDF_MPIROOT =  None
+|---------------------------------------------------------------------|
+ Could not find mpirun. Set to serial running ...
+
+ BDFHOME     =  /home/wzk/work/bdf/bdf-pkg
+ BDF_WORKDIR =  /work/wzk/bdf/test/test076
+ BDF_TMPDIR  =  /home/wzk/scratch/18865
+ BDFTASK     =  test076
+
+  BDF parrallel running information ...
+  BDF_MASTER_NODE Actinium4
+  BDF_MPIROOT =  None
+  Total number of computational nodes   = 1
+  Number of processes per node          = 1
+  Number of openmp threads per process  = 16
+
+
+  Singlepoint_task =  True
+  Fragmp2_task     =  False
+
+
+$compass
+title
+hcn <-> hnc transition state
+basis
+def2-svp
+geometry
+c 0.00000000 0.00000000 0.00000000
+n 0.00000000 0.00000000 1.14838000
+h 1.58536000 0.00000000 1.14838000
+end geometry
+skeleton
+check
+$end
+$bdfopt
+iprt
+3
+solver
+1
+hess
+init+final
+iopt
+10 
+$end
+$xuanyuan
+direct
+schwarz
+$end
+$scf
+rks
+dft
+b3lyp
+$end
+$resp
+geom
+$end
+tmpstdin  True
+npro is  1
+
+ BDF command:  /home/wzk/work/bdf/bdf-pkg/bin/compass.x /home/wzk/scratch/18865/test076XX0.compass.inp
+  BDF process        0 of        1 on Serial  
+ 
+|******************************************************************************|
+ 
+    Start running module compass
+    Current time   2021-05-08  14:49:00
+ 
+|******************************************************************************|
+
+ ++++++++++ Reading compass input ++++++++++++++++++
+ TITLE
+ BASIS
+ Input Basis set is DEF2-SVP
+ Spherical GTO 5d,7f
+ GEOMETRY
+ C 0.00000000 0.00000000 0.00000000                                             
+  
+ c       0.00000000      0.00000000      0.00000000
+ n       0.00000000      0.00000000      1.14838000
+ h       1.58536000      0.00000000      1.14838000
+ Number of atoms:        3
+ SKELETON
+ CHECK
+ $END
+ ++++++++++ End of reading compass input +++++++++++++
+
+
+|-------------------------------------------------------------------------------------------|
+
+ Atom           Cartcoord(Bohr)                 Charge Basis Auxbas Uatom Nstab Alink  Mass
+  C        0.000000     0.000000     0.000000     6.00    1     0     0     0   E     11.9967
+  N        0.000000     0.000000     2.170124     7.00    2     0     0     0   E     14.0031
+  H        2.995896     0.000000     2.170124     1.00    3     0     0     0   E      1.0073
+ 
+|--------------------------------------------------------------------------------------------|
+
+  End of reading atomic basis sets ..
+ Printing basis sets for checking ....
+
+ Atomic label:  C   6
+ Maxium L  2 7s4p1d ----> 3s2p1d NBF =  14
+ #--->s function
+      Exp Coef          Norm Coef       Con Coef
+          1238.401694   0.527426E+03    0.005517    0.000000    0.000000
+           186.290050   0.127396E+03    0.041089    0.000000    0.000000
+            42.251176   0.418691E+02    0.182254    0.000000    0.000000
+            11.676558   0.159588E+02    0.468285    0.000000    0.000000
+             3.593051   0.659345E+01    0.445758    0.000000    0.000000
+             0.402451   0.127659E+01    0.000000    1.000000    0.000000
+             0.130902   0.549825E+00    0.000000    0.000000    1.000000
+ #--->p function
+      Exp Coef          Norm Coef       Con Coef
+             9.468097   0.484521E+02    0.056888    0.000000
+             2.010355   0.698353E+01    0.312941    0.000000
+             0.547710   0.137459E+01    0.760650    0.000000
+             0.152686   0.278441E+00    0.000000    1.000000
+ #--->d function
+      Exp Coef          Norm Coef       Con Coef
+             0.800000   0.176578E+01    1.000000
+ 
+
+ Atomic label:  N   7
+ Maxium L  2 7s4p1d ----> 3s2p1d NBF =  14
+ #--->s function
+      Exp Coef          Norm Coef       Con Coef
+          1712.841585   0.672671E+03   -0.005448    0.000000    0.000000
+           257.648127   0.162475E+03   -0.040627    0.000000    0.000000
+            58.458246   0.534133E+02   -0.181120    0.000000    0.000000
+            16.198368   0.203995E+02   -0.468440    0.000000    0.000000
+             5.005260   0.845444E+01   -0.446168    0.000000    0.000000
+             0.587319   0.169500E+01    0.000000    1.000000    0.000000
+             0.187646   0.720310E+00    0.000000    0.000000    1.000000
+ #--->p function
+      Exp Coef          Norm Coef       Con Coef
+            13.571470   0.759920E+02   -0.058848    0.000000
+             2.925737   0.111629E+02   -0.320246    0.000000
+             0.799278   0.220473E+01   -0.753282    0.000000
+             0.219543   0.438415E+00    0.000000    1.000000
+ #--->d function
+      Exp Coef          Norm Coef       Con Coef
+             1.000000   0.260933E+01    1.000000
+ 
+
+ Atomic label:  H   1
+ Maxium L  1 4s1p ----> 2s1p NBF =   5
+ #--->s function
+      Exp Coef          Norm Coef       Con Coef
+            13.010701   0.173077E+02    0.033485    0.000000
+             1.962257   0.418873E+01    0.234722    0.000000
+             0.444538   0.137546E+01    0.813770    0.000000
+             0.121950   0.521375E+00    0.000000    1.000000
+ #--->p function
+      Exp Coef          Norm Coef       Con Coef
+             0.800000   0.220723E+01    1.000000
+ 
+ 
+   11.9967   14.0031    1.0073
+ 
+ Molecular center of mass
+         0.11173731     0.00000000     1.20614069
+
+ Molecular center of nuclear charge
+         0.21399259     0.00000000     1.24007068
+
+   11.9967   14.0031    1.0073
+ [molesym]
+ 
+ Auto decide molecular point group! Rotate coordinates into standard orientation!
+ Threshold= 0.10000E-08 0.10000E-11 0.10000E-03
+ 
+ zgeomsort being called!
+gsym: CS  , noper=    2
+ Exiting zgeomsort....
+ Representation generated
+  Binary group is observed ...
+  Point group name C(S)                         2
+  User set point group as C(S)    
+  Largest Abelian Subgroup C(S)                         2
+ C|S|)|                     1
+ I2
+ Representation generated
+ C|S|)|                     1
+ Symmetry check OK
+ Molecule has been symmetrized
+  Number of symmery unique centers:                      3
+
+|-------------------------------------------------------------------------------------------|
+
+ Atom           Cartcoord(Bohr)                 Charge Basis Auxbas Uatom Nstab Alink  Mass
+  C        1.133818     0.545917     0.000000     6.00    1     0     0     0   E     11.9967
+  N       -0.632893    -0.714310     0.000000     7.00    2     0     0     0   E     14.0031
+  H       -2.372658     1.724668     0.000000     1.00    3     0     0     0   E      1.0073
+ 
+|--------------------------------------------------------------------------------------------|
+
+Number of irreps:    2
+IRREP:   1   1   2
+DIMEN:   1   1   1
+
+ Irreps of multipole moment operators ...
+ Operator  Component    Irrep       Row
+  Dipole       x           A'          1
+  Dipole       y           A'          1
+  Dipole       z           A''         1
+  Quadpole     xx          A'          1
+  Quadpole     xy          A'          1
+  Quadpole     yy          A'          1
+  Quadpole     xz          A''         1
+  Quadpole     yz          A''         1
+  Quadpole     zz          A'          1
+ 
+ Print Multiplication table of irreps
+ A'       * A'       = A'      
+ A''      * A'       = A''     
+ A'       * A''      = A''     
+ A''      * A''      = A'      
+
+ Print CG coeff of irreps direct product table ...
+
+iup,te0    1   1
+ ------------CGcoeff tables-------------
+A'      A'      A'      
+
+iup,te0    1   1
+ ------------CGcoeff tables-------------
+A'      A''     A''     
+
+iup,te0    1   1
+ ------------CGcoeff tables-------------
+A''     A''     A'      
+ 
+ Generate symmetry adapted orbital ...
+ Print Multab
+  1  2
+  2  1
+
+|--------------------------------------------------|
+          Symmetry adapted orbital                   
+
+  Total number of basis functions:      33      33
+
+  Number of irreps:   2
+  Irrep : A'      A''     
+  Norb  :     24       9
+|--------------------------------------------------|
+
+Total number of shells:        8
+ R max for this shell (Bohr)   13.8499999999998       9.817571395126590E-011
+ R max for this shell (Bohr)   12.6299999999998       9.657211954493212E-011
+ R max for this shell (Bohr)   5.83999999999996       9.317954812948630E-011
+ R max for this shell (Bohr)   11.5899999999998       9.845351065530218E-011
+ R max for this shell (Bohr)   10.5899999999999       9.854267016579559E-011
+ R max for this shell (Bohr)   5.23999999999997       9.425821903758393E-011
+ R max for this shell (Bohr)   14.0099999999998       3.038905389416744E-010
+ R max for this shell (Bohr)   5.66999999999996       9.254561885381172E-011
+ 
+ ++++++++  DATA CHECK +++++++++++++++++++++++++++++++++
+  CHECKDATA:COMPASS:C(S)    
+  CHECKDATA:COMPASS:NATOM :        3
+  CHECKDATA:COMPASS:NBAS  :       33
+ ++++++++++ END DATA CHECK ++++++++++++++++++++++++++++
+ 
+|******************************************************************************|
+ 
+    Total cpu     time:          0.02  S
+    Total system  time:          0.01  S
+    Total wall    time:          0.15  S
+ 
+    Current time   2021-05-08  14:49:00
+    End running module compass
+|******************************************************************************|
+ 
+tmpstdin  True
+npro is  1
+
+ BDF command:  /home/wzk/work/bdf/bdf-pkg/bin/bdfopt.x /home/wzk/scratch/18865/test076XX1.bdfopt.inp
+  BDF process        0 of        1 on Serial  
+ 
+|******************************************************************************|
+ 
+    Start running module bdfopt
+    Current time   2021-05-08  14:49:00
+ 
+|******************************************************************************|
+
+|-------------------------------------------------------------------------------------------|
+
+ Atom           Cartcoord(Bohr)                 Charge Basis Auxbas Uatom Nstab Alink  Mass
+  C        1.133818     0.545917     0.000000     6.00    1     0     1     2   E     11.9967
+  N       -0.632893    -0.714310     0.000000     7.00    2     0     1     2   E     14.0031
+  H       -2.372658     1.724668     0.000000     1.00    3     0     1     2   E      1.0073
+ 
+|--------------------------------------------------------------------------------------------|
+
+ natom=                     3
+ 
+ [bdfopt_input]
+ 
+ 
+ [bdfopt_input_prt]
+ 
+  Print Level (iprt)          =                     3
+  Solver                      =                     1
+  MaxCycle                    =                    -1
+  TolGrad                     =  2.000000000000000E-004
+  TolStep                     =  -1.00000000000000     
+  Opt Method (iopt)           =                    10
+  Coord System (icoord)       =                     0
+  Do Multistate? (imulti)     =                     0
+  Do Line Search? (iline)     =                     1
+ 
+ 
+    GEOMETRY OPTIMIZATION IN REDUNDANT INTERNAL COORDINATE
+ 
+  Optimization will search for   1-th order saddle point...
+  Optimization Method: Rational Function Optimization method combined with Two point Linear Search method.
+   Hessian about setting: 
+    Initial Hessian:   Calculate analytically ...
+    Update  Hessian:  Bofill Method for Saddle Point .
+  Convergence Tolerance (force-RMS/MAX, step-RMS/MAX) 0.200E-03 0.300E-03 0.800E-03 0.120E-02
+ 
+   Input Cartesian Coordinates for generating Internal Coordinates:
+       Atom           X                Y                Z
+       1C           1.133818003      0.545916522      0.000000000
+       2N          -0.632892805     -0.714309543      0.000000000
+       3H          -2.372658383      1.724667667      0.000000000
+ 
+   Internal coordinate definition...
+   No.    A        B        C        D     Coordinate-Type Value(A.U./Rad.) Constrainted?
+     1    1C       2N                       Norm     Bond       2.170123687    NO 
+     2    2N       3H                       Norm     Bond       2.995896209    NO 
+     3    2N       3H                       Fragment Bond       2.995896209    NO 
+     4    1C       2N       3H              Norm     Angle      1.570796327    NO 
+ 
+ 
+   Geometry Optimization step :    1
+ 
+  Single Point SCF for geometry optimization, also get force and Hessian.
+ 
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 T bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.16688096
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.166880961648
+     1  -0.0931200445  -0.0820095243   0.0000000000
+     2   0.1539911194   0.0125023797   0.0000000000
+     3  -0.0608686584   0.0695060283   0.0000000000
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.88729E-06
+Departure from rotational invariance:    0.12591E-05
+Departure from translational invariance, after projection:    0.51719E-17
+Departure from rotational invariance, after projection:    0.27756E-16
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C        0.599991       0.288887       0.000000
+  N       -0.334912      -0.377996       0.000000
+  H       -1.255557       0.912655       0.000000
+ State=  1
+ Energy=    -93.16688096
+ Gradient=
+  C       -0.09312085      -0.08200939       0.00000000
+  N        0.15399014       0.01250275       0.00000000
+  H       -0.06086930       0.06950664       0.00000000
+ 
+
+|******************************************************************************|
+ 
+ [bdfopt_hess]
+ 
+ Start numerical Hessian calculation ...
+ Energy and gradient at unperturbed geometry...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.16688049
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.166880490525
+     1  -0.0931200713  -0.0820094786   0.0000000045
+     2   0.1539912251   0.0125024149   0.0000000124
+     3  -0.0608681445   0.0695057934  -0.0000000002
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.10888E-05
+Departure from rotational invariance:    0.12614E-05
+Departure from translational invariance, after projection:    0.95366E-17
+Departure from rotational invariance, after projection:    0.27756E-16
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C        0.599991       0.288887       0.000000
+  N       -0.334912      -0.377996       0.000000
+  H       -1.255557       0.912655       0.000000
+ State=  1
+ Energy=    -93.16688049
+ Gradient=
+  C       -0.09312107      -0.08200930      -0.00000000
+  N        0.15399005       0.01250284      -0.00000000
+  H       -0.06086898       0.06950646       0.00000000
+ 
+
+|******************************************************************************|
+ Displacing atom    1 (+x)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.1669726
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.166972601640
+     1  -0.0922341375  -0.0813103569   0.0000000032
+     2   0.1531009349   0.0117878080   0.0000000132
+     3  -0.0608637558   0.0695212566  -0.0000000031
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.11016E-05
+Departure from rotational invariance:    0.10543E-05
+Departure from translational invariance, after projection:    0.69389E-17
+Departure from rotational invariance, after projection:    0.27756E-16
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C        0.600520       0.288887       0.000000
+  N       -0.334912      -0.377996       0.000000
+  H       -1.255557       0.912655       0.000000
+ State=  1
+ Energy=    -93.16697260
+ Gradient=
+  C       -0.09223515      -0.08131013       0.00000000
+  N        0.15309978       0.01178824      -0.00000000
+  H       -0.06086463       0.06952189       0.00000000
+ 
+
+|******************************************************************************|
+ Displacing atom    1 (+y)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.1669617
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.166961699613
+     1  -0.0924195187  -0.0815841577   0.0000000013
+     2   0.1532943248   0.0120944083   0.0000000106
+     3  -0.0608716994   0.0694884062  -0.0000000033
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.11282E-05
+Departure from rotational invariance:    0.12870E-05
+Departure from translational invariance, after projection:    0.69389E-17
+Departure from rotational invariance, after projection:    0.13878E-16
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C        0.599991       0.289416       0.000000
+  N       -0.334912      -0.377996       0.000000
+  H       -1.255557       0.912655       0.000000
+ State=  1
+ Energy=    -93.16696170
+ Gradient=
+  C       -0.09242055      -0.08158396      -0.00000000
+  N        0.15329312       0.01209486       0.00000000
+  H       -0.06087256       0.06948910      -0.00000000
+ 
+
+|******************************************************************************|
+ Displacing atom    1 (+z)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.16688052
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.166880522080
+     1  -0.0931198549  -0.0820090907  -0.0000568593
+     2   0.1539908611   0.0125027094   0.0000610092
+     3  -0.0608680038   0.0695051071  -0.0000042429
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.10876E-05
+Departure from rotational invariance:    0.25195E-05
+Departure from translational invariance, after projection:    0.83395E-17
+Departure from rotational invariance, after projection:    0.55511E-16
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C        0.599991       0.288887       0.000529
+  N       -0.334912      -0.377996       0.000000
+  H       -1.255557       0.912655       0.000000
+ State=  1
+ Energy=    -93.16688052
+ Gradient=
+  C       -0.09312085      -0.08200915      -0.00005688
+  N        0.15398952       0.01250314       0.00006111
+  H       -0.06086867       0.06950601      -0.00000423
+ 
+
+|******************************************************************************|
+ Displacing atom    2 (+x)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.16672605
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.166726049962
+     1  -0.0940120777  -0.0827065253  -0.0000001047
+     2   0.1548999393   0.0132308967   0.0000001136
+     3  -0.0608848540   0.0694743654   0.0000000078
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.10874E-05
+Departure from rotational invariance:    0.25827E-05
+Departure from translational invariance, after projection:    0.83395E-17
+Departure from rotational invariance, after projection:    0.41633E-16
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C        0.599991       0.288887       0.000000
+  N       -0.334383      -0.377996       0.000000
+  H       -1.255557       0.912655       0.000000
+ State=  1
+ Energy=    -93.16672605
+ Gradient=
+  C       -0.09401307      -0.08270660       0.00000000
+  N        0.15489859       0.01323132      -0.00000000
+  H       -0.06088552       0.06947528       0.00000000
+ 
+
+|******************************************************************************|
+ Displacing atom    2 (+y)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.16686782
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.166867822369
+     1  -0.0938241945  -0.0824093704  -0.0000000013
+     2   0.1547076953   0.0128675057   0.0000000039
+     3  -0.0608805153   0.0695407560  -0.0000000001
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.10616E-05
+Departure from rotational invariance:    0.32697E-05
+Departure from translational invariance, after projection:    0.46259E-17
+Departure from rotational invariance, after projection:    0.41633E-16
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C        0.599991       0.288887       0.000000
+  N       -0.334912      -0.377467       0.000000
+  H       -1.255557       0.912655       0.000000
+ State=  1
+ Energy=    -93.16686782
+ Gradient=
+  C       -0.09382520      -0.08240837      -0.00000000
+  N        0.15470714       0.01286787      -0.00000000
+  H       -0.06088194       0.06954050       0.00000000
+ 
+
+|******************************************************************************|
+ Displacing atom    2 (+z)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.16688051
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.166880507831
+     1  -0.0931195284  -0.0820091789   0.0000611017
+     2   0.1539908230   0.0125016408  -0.0000345237
+     3  -0.0608682855   0.0695062679  -0.0000264834
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.10892E-05
+Departure from rotational invariance:    0.65960E-06
+Departure from translational invariance, after projection:    0.10344E-16
+Departure from rotational invariance, after projection:    0.55511E-16
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C        0.599991       0.288887       0.000000
+  N       -0.334912      -0.377996       0.000529
+  H       -1.255557       0.912655       0.000000
+ State=  1
+ Energy=    -93.16688051
+ Gradient=
+  C       -0.09312053      -0.08200888       0.00006111
+  N        0.15398974       0.01250206      -0.00003466
+  H       -0.06086921       0.06950681      -0.00002645
+ 
+
+|******************************************************************************|
+ Displacing atom    3 (+x)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.16694136
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.166941359979
+     1  -0.0931248444  -0.0820180344   0.0000003375
+     2   0.1539828370   0.0124984707  -0.0000004220
+     3  -0.0608549552   0.0695183819   0.0000000843
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.10864E-05
+Departure from rotational invariance:    0.76832E-05
+Departure from translational invariance, after projection:    0.23130E-17
+Departure from rotational invariance, after projection:    0.57443E-22
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C        0.599991       0.288887       0.000000
+  N       -0.334912      -0.377996       0.000000
+  H       -1.255028       0.912655       0.000000
+ State=  1
+ Energy=    -93.16694136
+ Gradient=
+  C       -0.09312583      -0.08201911       0.00000000
+  N        0.15398079       0.01249887      -0.00000000
+  H       -0.06085496       0.06952024      -0.00000000
+ 
+
+|******************************************************************************|
+ Displacing atom    3 (+y)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.166811
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.166810998247
+     1  -0.0931258772  -0.0820389409   0.0000000055
+     2   0.1539794485   0.0125534771   0.0000000108
+     3  -0.0608505725   0.0694841867   0.0000000007
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.10865E-05
+Departure from rotational invariance:    0.12098E-04
+Departure from translational invariance, after projection:    0.51719E-17
+Departure from rotational invariance, after projection:    0.11815E-23
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C        0.599991       0.288887       0.000000
+  N       -0.334912      -0.377996       0.000000
+  H       -1.255557       0.913184       0.000000
+ State=  1
+ Energy=    -93.16681100
+ Gradient=
+  C       -0.09312684      -0.08204085      -0.00000000
+  N        0.15397681       0.01255391      -0.00000000
+  H       -0.06084997       0.06948693      -0.00000000
+ 
+
+|******************************************************************************|
+ Displacing atom    3 (+z)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.16688048
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.166880478333
+     1  -0.0931199188  -0.0820093309  -0.0000042382
+     2   0.1539910587   0.0125023886  -0.0000264218
+     3  -0.0608681374   0.0695056677   0.0000307093
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.10874E-05
+Departure from rotational invariance:    0.15237E-05
+Departure from translational invariance, after projection:    0.10344E-16
+Departure from rotational invariance, after projection:    0.13878E-16
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C        0.599991       0.288887       0.000000
+  N       -0.334912      -0.377996       0.000000
+  H       -1.255557       0.912655       0.000529
+ State=  1
+ Energy=    -93.16688048
+ Gradient=
+  C       -0.09312092      -0.08200920      -0.00000423
+  N        0.15398985       0.01250281      -0.00002645
+  H       -0.06086894       0.06950638       0.00003069
+ 
+
+|******************************************************************************|
+ Check consistency of numerical and analytic gradient:
+ 
+|--------------------------------------------------------------------------------|
+          Molecular gradient - Analytic gradient at unperturbed geometry
+ 
+        Atom            X                    Y                    Z
+        C             -0.0931210706         -0.0820092982         -0.0000000000
+        N              0.1539900515          0.0125028396         -0.0000000000
+        H             -0.0608689809          0.0695064586          0.0000000000
+|--------------------------------------------------------------------------------|
+ 
+ 
+|--------------------------------------------------------------------------------|
+          Molecular gradient - Numerical gradient at unperturbed geometry
+ 
+        Atom            X                    Y                    Z
+        C             -0.0921111150         -0.0812090880         -0.0000315550
+        N              0.1544405630          0.0126681560         -0.0000173060
+        H             -0.0608694540          0.0694922780          0.0000121920
+|--------------------------------------------------------------------------------|
+ 
+ 
+|--------------------------------------------------------------------------------|
+          Molecular gradient - Numerical gradient minus analytic gradient
+ 
+        Atom            X                    Y                    Z
+        C              0.0010099557          0.0008002102         -0.0000315550
+        N              0.0004505115          0.0001653164         -0.0000173060
+        H             -0.0000004731         -0.0000141806          0.0000121920
+|--------------------------------------------------------------------------------|
+ 
+ 
+|--------------------------------------------------------------------------------|
+          Molecular Hessian - Numerical Hessian (BDFOPT)
+ 
+                      1              2              3              4              5              6
+       1   0.8859224154   0.6998446279   0.0001112273  -0.8911374209  -0.7093641850   0.0002705397
+       2   0.6998446279   0.4253402564   0.0000737163  -0.6971188598  -0.4035274133   0.0002111724
+       3   0.0001112273   0.0000737163  -0.0568789197  -0.0002656699   0.0001485079   0.0611137285
+       4  -0.8911374209  -0.6971188598  -0.0002656699   0.9085376594   0.7227854651  -0.0001580045
+       5  -0.7093641850  -0.4035274133   0.0001485079   0.7227854651   0.3650324718  -0.0003874088
+       6   0.0002705397   0.0002111724   0.0611137285  -0.0001580045  -0.0003874088  -0.0346619970
+       7  -0.0002064819  -0.0066996712   0.0001544425  -0.0128981317  -0.0084644456  -0.0001125352
+       8   0.0048300944  -0.0244526525  -0.0002222242  -0.0222084491   0.0425576062   0.0001762365
+       9   0.0000777749   0.0000493470  -0.0042349120  -0.0000997580  -0.0000123027  -0.0264515379
+ 
+                      7              8              9
+       1  -0.0002064819   0.0048300944   0.0000777749
+       2  -0.0066996712  -0.0244526525   0.0000493470
+       3   0.0001544425  -0.0002222242  -0.0042349120
+       4  -0.0128981317  -0.0222084491  -0.0000997580
+       5  -0.0084644456   0.0425576062  -0.0000123027
+       6  -0.0001125352   0.0001762365  -0.0264515379
+       7   0.0140239941   0.0163954233   0.0000219831
+       8   0.0163954233  -0.0195278091  -0.0000370443
+       9   0.0000219831  -0.0000370443   0.0306863594
+ 
+|--------------------------------------------------------------------------------|
+ 
+ 
+  Force in Internal Coordinate: 
+    0.123434   -0.045967   -0.045967   -0.027534
+ 
+
+|******************************************************************************|
+       Redundant internal coordinates on Angstrom/Degree 
+
+  Name         Defination         Value     Constraint
+  R1          1   2               1.1484    No  
+  R2          2   3               1.5854    No  
+  R3          2   3               1.5854    No  
+
+|******************************************************************************|
+
+ 
+  Projected Force in Internal Coordinate: 
+    0.123434   -0.045967   -0.045967   -0.027534
+ 
+   Hessian eigen:-0.67985E-01-0.38383E-01 0.15021E+01 0.10000E+04
+   i=   1lam=   -0.088383 sum=   -0.087232
+   i=   2lam=   -0.063383 sum=   -0.165175
+   i=   3lam=   -0.075883 sum=   -0.113237
+   i=   4lam=   -0.082133 sum=   -0.098382
+   i=   5lam=   -0.085258 sum=   -0.092437
+   i=   6lam=   -0.086820 sum=   -0.089751
+   i=   7lam=   -0.087602 sum=   -0.088471
+   i=   8lam=   -0.087992 sum=   -0.087847
+   i=   9lam=   -0.087797 sum=   -0.088158
+   i=  10lam=   -0.087895 sum=   -0.088002
+   i=  11lam=   -0.087943 sum=   -0.087924
+   i=  12lam=   -0.087919 sum=   -0.087963
+   i=  13lam=   -0.087931 sum=   -0.087944
+   i=  14lam=   -0.087937 sum=   -0.087934
+   i=  15lam=   -0.087934 sum=   -0.087939
+   i=  16lam=   -0.087936 sum=   -0.087936
+   i=  17lam=   -0.087936 sum=   -0.087935
+   i=  18lam=   -0.087936 sum=   -0.087936
+   i=  19lam=   -0.087936 sum=   -0.087936
+   i=  20lam=   -0.087936 sum=   -0.087936
+   i=  21lam=   -0.087936 sum=   -0.087936
+   i=  22lam=   -0.087936 sum=   -0.087936
+   i=  23lam=   -0.087936 sum=   -0.087936
+   rfostp mmin=  2 lam0=    0.015725 lam=   -0.087936
+   Quadratic Step size exceeded Trust Radius (  0.3000), scaled by   0.225
+            Internal coordinate steps (a.u./rad): 
+   Quad. :      0.025951   -0.055517   -0.055517   -0.288379
+   Total :      0.025951   -0.055517   -0.055517   -0.288379
+  Transforming internal coordinate to Cartesian...
+   iter=  1 rms(cart)= 0.10075280 rms(int)= 0.10705183
+   iter=  2 rms(cart)= 0.04724142 rms(int)= 0.04555328
+   iter=  3 rms(cart)= 0.00096163 rms(int)= 0.00218755
+   iter=  4 rms(cart)= 0.00000014 rms(int)= 0.00000028
+   iter=  5 rms(cart)= 0.00000000 rms(int)= 0.00000000
+ 
+   [bdfopt_symmetrize_molecule]
+       2 symmetry operations are found, 
+     ...  2 of which are preserved by the current geometry perturbation.
+   Predict energy change:  0.16364E-02
+ 
+   Molecular Cartesian Coordinates (X,Y,Z) in Angstrom : 
+      C           0.46339269,      0.37915751,      0.00000000,
+      N          -0.34507761,     -0.45563687,      0.00000000,
+      H          -1.10879370,      0.90002449,      0.00000000,
+ 
+ -- Geometry Optimization Converged Internal Coordiants in Angstrom/Degree: ---
+   Internal Coordinate in Angstrom/Degree: 
+   Bond    :     1.162113    1.555982    1.555982
+   Angle   :      73.4771
+ 
+ -- End of Converged Internal Coordinates -------------------------------------
+                       Force-RMS    Force-Max     Step-RMS     Step-Max
+    Conv. tolerance :  0.2000E-03   0.3000E-03   0.8000E-03   0.1200E-02
+    Current values  :  0.7110E-01   0.1234E+00   0.1500E+00   0.2884E+00
+    Geom. converge  :     No           No           No           No  
+ 
+ 
+   Geometry Optimization step :    2
+ 
+  Single Point SCF for geometry optimization, also get force.
+ 
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 T bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.18759189
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.187591887787
+     1   0.0744504013  -0.0391715286   0.0000000000
+     2  -0.0833532368  -0.0411750198   0.0000000000
+     3   0.0089039376   0.0803457319   0.0000000000
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.45720E-06
+Departure from rotational invariance:    0.74233E-06
+Departure from translational invariance, after projection:    0.51719E-17
+Departure from rotational invariance, after projection:    0.00000E+00
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C        0.463393       0.379157       0.000000
+  N       -0.345078      -0.455637       0.000000
+  H       -1.108794       0.900024       0.000000
+ State=  1
+ Energy=    -93.18759189
+ Gradient=
+  C       -0.03255468      -0.07757169       0.00000000
+  N        0.09051452       0.02122093       0.00000000
+  H       -0.05795984       0.05635076       0.00000000
+ 
+
+|******************************************************************************|
+ 
+  Force in Internal Coordinate: 
+    0.078371   -0.038772   -0.038772   -0.067157
+ 
+ 
+  Projected Force in Internal Coordinate: 
+    0.078371   -0.038772   -0.038772   -0.067157
+ 
+ dx= 0.90000000E-01 dg= 0.60862594E-01 dxdf=-0.94582677E-02 dxfcdx=-0.32728488E-02 df2= 0.11768761E-02
+   Hessian updated (Bofill) with points:   1   2
+   Hessian eigen:-0.16470E+00-0.21343E-01 0.15126E+01 0.10000E+04
+   i=   1lam=   -0.071343 sum=   -0.107399
+   i=   2lam=   -0.121343 sum=   -0.055583
+   i=   3lam=   -0.096343 sum=   -0.072874
+   i=   4lam=   -0.083843 sum=   -0.086690
+   i=   5lam=   -0.090093 sum=   -0.079156
+   i=   6lam=   -0.086968 sum=   -0.082744
+   i=   7lam=   -0.085405 sum=   -0.084669
+   i=   8lam=   -0.084624 sum=   -0.085667
+   i=   9lam=   -0.085015 sum=   -0.085165
+   i=  10lam=   -0.085210 sum=   -0.084916
+   i=  11lam=   -0.085112 sum=   -0.085040
+   i=  12lam=   -0.085064 sum=   -0.085103
+   i=  13lam=   -0.085088 sum=   -0.085071
+   i=  14lam=   -0.085076 sum=   -0.085087
+   i=  15lam=   -0.085082 sum=   -0.085079
+   i=  16lam=   -0.085079 sum=   -0.085083
+   i=  17lam=   -0.085080 sum=   -0.085081
+   i=  18lam=   -0.085081 sum=   -0.085080
+   i=  19lam=   -0.085081 sum=   -0.085081
+   i=  20lam=   -0.085080 sum=   -0.085081
+   i=  21lam=   -0.085081 sum=   -0.085081
+   i=  22lam=   -0.085081 sum=   -0.085081
+   i=  23lam=   -0.085081 sum=   -0.085081
+   i=  24lam=   -0.085081 sum=   -0.085081
+   i=  25lam=   -0.085081 sum=   -0.085081
+   rfostp mmin=  2 lam0=    0.012066 lam=   -0.085081
+   Quadratic Step size exceeded Trust Radius (  0.3000), scaled by   0.259
+            Internal coordinate steps (a.u./rad): 
+   Quad. :      0.008528   -0.211141   -0.211141   -0.027682
+   Total :      0.008528   -0.211141   -0.211141   -0.027682
+  Transforming internal coordinate to Cartesian...
+   iter=  1 rms(cart)= 0.05869630 rms(int)= 0.14136972
+   iter=  2 rms(cart)= 0.00296733 rms(int)= 0.00883924
+   iter=  3 rms(cart)= 0.00000176 rms(int)= 0.00000371
+   iter=  4 rms(cart)= 0.00000000 rms(int)= 0.00000000
+ 
+   [bdfopt_symmetrize_molecule]
+       2 symmetry operations are found, 
+     ...  2 of which are preserved by the current geometry perturbation.
+   Predict energy change:  0.11603E-02
+ 
+   Molecular Cartesian Coordinates (X,Y,Z) in Angstrom : 
+      C           0.43593692,      0.40487877,      0.00000000,
+      N          -0.37841405,     -0.43049368,      0.00000000,
+      H          -1.04800149,      0.84916004,      0.00000000,
+ 
+ -- Geometry Optimization Converged Internal Coordiants in Angstrom/Degree: ---
+   Internal Coordinate in Angstrom/Degree: 
+   Bond    :     1.166625    1.444251    1.444251
+   Angle   :      71.8911
+ 
+ -- End of Converged Internal Coordinates -------------------------------------
+                       Force-RMS    Force-Max     Step-RMS     Step-Max
+    Conv. tolerance :  0.2000E-03   0.3000E-03   0.8000E-03   0.1200E-02
+    Current values  :  0.5844E-01   0.7837E-01   0.1500E+00   0.2111E+00
+    Geom. converge  :     No           No           No           No  
+ 
+ 
+   Geometry Optimization step :    3
+ 
+  Single Point SCF for geometry optimization, also get force.
+ 
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 T bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.2055829
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.205582902339
+     1   0.0653096185  -0.0288652120   0.0000000000
+     2  -0.0675178936  -0.0436810637   0.0000000000
+     3   0.0022100471   0.0725444720   0.0000000000
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.84283E-06
+Departure from rotational invariance:    0.19364E-05
+Departure from translational invariance, after projection:    0.23130E-17
+Departure from rotational invariance, after projection:    0.20817E-16
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C        0.435937       0.404879       0.000000
+  N       -0.378414      -0.430494       0.000000
+  H       -1.048001       0.849160       0.000000
+ State=  1
+ Energy=    -93.20558290
+ Gradient=
+  C       -0.03055984      -0.06453281       0.00000000
+  N        0.07965014       0.01107440       0.00000000
+  H       -0.04909030       0.05345841       0.00000000
+ 
+
+|******************************************************************************|
+ 
+  Force in Internal Coordinate: 
+    0.067541   -0.035063   -0.035063   -0.051067
+ 
+ 
+  Projected Force in Internal Coordinate: 
+    0.067541   -0.035063   -0.035063   -0.051067
+ 
+ dx= 0.90000000E-01 dg= 0.20092011E-01 dxdf= 0.21041905E-02 dxfcdx=-0.23205780E-02 df2= 0.33711615E-03
+   Hessian updated (Bofill) with points:   2   3
+   Hessian eigen:-0.17109E+00 0.36233E-01 0.15107E+01 0.10000E+04
+   i=   1lam=    0.000000 sum=   -0.117191
+   i=   2lam=   -0.117191 sum=   -0.029772
+   i=   3lam=   -0.029772 sum=   -0.065639
+   i=   4lam=   -0.065639 sum=   -0.043508
+   i=   5lam=   -0.043508 sum=   -0.054818
+   i=   6lam=   -0.054818 sum=   -0.048353
+   i=   7lam=   -0.048353 sum=   -0.051838
+   i=   8lam=   -0.051838 sum=   -0.049896
+   i=   9lam=   -0.049896 sum=   -0.050959
+   i=  10lam=   -0.050959 sum=   -0.050371
+   i=  11lam=   -0.050371 sum=   -0.050694
+   i=  12lam=   -0.050694 sum=   -0.050516
+   i=  13lam=   -0.050516 sum=   -0.050614
+   i=  14lam=   -0.050614 sum=   -0.050560
+   i=  15lam=   -0.050560 sum=   -0.050590
+   i=  16lam=   -0.050590 sum=   -0.050574
+   i=  17lam=   -0.050574 sum=   -0.050583
+   i=  18lam=   -0.050583 sum=   -0.050578
+   i=  19lam=   -0.050578 sum=   -0.050580
+   i=  20lam=   -0.050580 sum=   -0.050579
+   i=  21lam=   -0.050579 sum=   -0.050580
+   i=  22lam=   -0.050580 sum=   -0.050579
+   i=  23lam=   -0.050579 sum=   -0.050579
+   i=  24lam=   -0.050579 sum=   -0.050579
+   i=  25lam=   -0.050579 sum=   -0.050579
+   i=  26lam=   -0.050579 sum=   -0.050579
+   i=  27lam=   -0.050579 sum=   -0.050579
+   i=  28lam=   -0.050579 sum=   -0.050579
+   i=  29lam=   -0.050579 sum=   -0.050579
+   rfostp mmin=  2 lam0=    0.005188 lam=   -0.050579
+   Quadratic Step size exceeded Trust Radius (  0.3000), scaled by   0.394
+            Internal coordinate steps (a.u./rad): 
+   Quad. :      0.018291   -0.210078   -0.210078   -0.037419
+   Total :      0.018291   -0.210078   -0.210078   -0.037419
+  Transforming internal coordinate to Cartesian...
+   iter=  1 rms(cart)= 0.06092812 rms(int)= 0.14177649
+   iter=  2 rms(cart)= 0.00289649 rms(int)= 0.00862484
+   iter=  3 rms(cart)= 0.00000241 rms(int)= 0.00000496
+   iter=  4 rms(cart)= 0.00000000 rms(int)= 0.00000000
+ 
+   [bdfopt_symmetrize_molecule]
+       2 symmetry operations are found, 
+     ...  2 of which are preserved by the current geometry perturbation.
+   Predict energy change: -0.13720E-02
+ 
+   Molecular Cartesian Coordinates (X,Y,Z) in Angstrom : 
+      C           0.40870516,      0.43343249,      0.00000000,
+      N          -0.41407468,     -0.40723703,      0.00000000,
+      H          -0.98510909,      0.79734967,      0.00000000,
+ 
+ -- Geometry Optimization Converged Internal Coordiants in Angstrom/Degree: ---
+   Internal Coordinate in Angstrom/Degree: 
+   Bond    :     1.176304    1.333083    1.333083
+   Angle   :      69.7471
+ 
+ -- End of Converged Internal Coordinates -------------------------------------
+                       Force-RMS    Force-Max     Step-RMS     Step-Max
+    Conv. tolerance :  0.2000E-03   0.3000E-03   0.8000E-03   0.1200E-02
+    Current values  :  0.4906E-01   0.6754E-01   0.1500E+00   0.2101E+00
+    Geom. converge  :     No           No           No           No  
+ 
+ 
+   Geometry Optimization step :    4
+ 
+  Single Point SCF for geometry optimization, also get force.
+ 
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 T bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22119155
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.221191546577
+     1   0.0454168821  -0.0139555153   0.0000000000
+     2  -0.0396064988  -0.0395548064   0.0000000000
+     3  -0.0058089889   0.0535087017   0.0000000000
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.71249E-06
+Departure from rotational invariance:    0.71043E-06
+Departure from translational invariance, after projection:    0.00000E+00
+Departure from rotational invariance, after projection:    0.69389E-17
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C        0.408705       0.433432       0.000000
+  N       -0.414075      -0.407237       0.000000
+  H       -0.985109       0.797350       0.000000
+ State=  1
+ Energy=    -93.22119155
+ Gradient=
+  C       -0.02438712      -0.04077560       0.00000000
+  N        0.05590267      -0.00285642       0.00000000
+  H       -0.03151555       0.04363202       0.00000000
+ 
+
+|******************************************************************************|
+ 
+  Force in Internal Coordinate: 
+    0.046199   -0.026463   -0.026463   -0.024657
+ 
+ 
+  Projected Force in Internal Coordinate: 
+    0.046199   -0.026463   -0.026463   -0.024657
+ 
+ dx= 0.90000000E-01 dg= 0.36067947E-01 dxdf= 0.49917440E-02 dxfcdx= 0.27439601E-02 df2= 0.19698619E-03
+   Hessian updated (Bofill) with points:   3   4
+   Hessian eigen:-0.18828E+00 0.80041E-01 0.15091E+01 0.10000E+04
+   i=   1lam=    0.000000 sum=   -0.026596
+   i=   2lam=   -0.026596 sum=   -0.020286
+   i=   3lam=   -0.020286 sum=   -0.021481
+   i=   4lam=   -0.021481 sum=   -0.021243
+   i=   5lam=   -0.021243 sum=   -0.021290
+   i=   6lam=   -0.021290 sum=   -0.021281
+   i=   7lam=   -0.021281 sum=   -0.021283
+   i=   8lam=   -0.021283 sum=   -0.021282
+   i=   9lam=   -0.021282 sum=   -0.021283
+   i=  10lam=   -0.021283 sum=   -0.021283
+   i=  11lam=   -0.021283 sum=   -0.021283
+   rfostp mmin=  2 lam0=    0.000145 lam=   -0.021283
+   Quadratic Step size exceeded Trust Radius (  0.3000), scaled by   0.674
+            Internal coordinate steps (a.u./rad): 
+   Quad. :      0.023503   -0.195524   -0.195524   -0.113966
+   Total :      0.023503   -0.195524   -0.195524   -0.113966
+  Transforming internal coordinate to Cartesian...
+   iter=  1 rms(cart)= 0.08646562 rms(int)= 0.14643872
+   iter=  2 rms(cart)= 0.00263009 rms(int)= 0.00593155
+   iter=  3 rms(cart)= 0.00000678 rms(int)= 0.00000908
+   iter=  4 rms(cart)= 0.00000000 rms(int)= 0.00000000
+ 
+   [bdfopt_symmetrize_molecule]
+       2 symmetry operations are found, 
+     ...  2 of which are preserved by the current geometry perturbation.
+   Predict energy change: -0.38455E-02
+ 
+   Molecular Cartesian Coordinates (X,Y,Z) in Angstrom : 
+      C           0.34945409,      0.47806841,      0.00000000,
+      N          -0.45024760,     -0.40146753,      0.00000000,
+      H          -0.88968511,      0.74694426,      0.00000000,
+ 
+ -- Geometry Optimization Converged Internal Coordiants in Angstrom/Degree: ---
+   Internal Coordinate in Angstrom/Degree: 
+   Bond    :     1.188741    1.229616    1.229616
+   Angle   :      63.2173
+ 
+ -- End of Converged Internal Coordinates -------------------------------------
+                       Force-RMS    Force-Max     Step-RMS     Step-Max
+    Conv. tolerance :  0.2000E-03   0.3000E-03   0.8000E-03   0.1200E-02
+    Current values  :  0.3218E-01   0.4620E-01   0.1500E+00   0.1955E+00
+    Geom. converge  :     No           No           No           No  
+ 
+ 
+   Geometry Optimization step :    5
+ 
+  Single Point SCF for geometry optimization, also get force.
+ 
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 T bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22846031
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.228460314353
+     1   0.0215938044   0.0137606219   0.0000000000
+     2  -0.0064981622  -0.0142512787   0.0000000000
+     3  -0.0150992147   0.0004918429   0.0000000000
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.12548E-05
+Departure from rotational invariance:    0.50633E-05
+Departure from translational invariance, after projection:    0.00000E+00
+Departure from rotational invariance, after projection:    0.00000E+00
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C        0.349454       0.478068       0.000000
+  N       -0.450248      -0.401468       0.000000
+  H       -0.889685       0.746944       0.000000
+ State=  1
+ Energy=    -93.22846031
+ Gradient=
+  C       -0.02468658      -0.00680141       0.00000000
+  N        0.01492941      -0.00473240       0.00000000
+  H        0.00975716       0.01153381       0.00000000
+ 
+
+|******************************************************************************|
+ 
+  Force in Internal Coordinate: 
+    0.021640   -0.003643   -0.003643    0.030753
+ 
+ 
+  Projected Force in Internal Coordinate: 
+    0.021640   -0.003643   -0.003643    0.030753
+ 
+ dx= 0.90000000E-01 dg= 0.68665338E-01 dxdf= 0.15815954E-01 dxfcdx= 0.76910728E-02 df2= 0.19286986E-02
+   Hessian updated (Bofill) with points:   4   5
+   Hessian eigen:-0.22804E+00 0.21355E+00 0.15064E+01 0.10000E+04
+   i=   1lam=    0.000000 sum=   -0.001426
+   i=   2lam=   -0.001426 sum=   -0.001418
+   i=   3lam=   -0.001418 sum=   -0.001418
+   i=   4lam=   -0.001418 sum=   -0.001418
+   rfostp mmin=  2 lam0=    0.003221 lam=   -0.001418
+            Internal coordinate steps (a.u./rad): 
+   Quad. :      0.010101    0.093032    0.093032   -0.043678
+   Total :      0.010101    0.093032    0.093032   -0.043678
+  Transforming internal coordinate to Cartesian...
+   iter=  1 rms(cart)= 0.02564875 rms(int)= 0.06954051
+   iter=  2 rms(cart)= 0.00048708 rms(int)= 0.00067677
+   iter=  3 rms(cart)= 0.00000012 rms(int)= 0.00000018
+   iter=  4 rms(cart)= 0.00000000 rms(int)= 0.00000000
+ 
+   [bdfopt_symmetrize_molecule]
+       2 symmetry operations are found, 
+     ...  2 of which are preserved by the current geometry perturbation.
+   Predict energy change:  0.88259E-03
+ 
+   Molecular Cartesian Coordinates (X,Y,Z) in Angstrom : 
+      C           0.33366641,      0.48133176,      0.00000000,
+      N          -0.43975806,     -0.42842495,      0.00000000,
+      H          -0.88438697,      0.77063832,      0.00000000,
+ 
+ -- Geometry Optimization Converged Internal Coordiants in Angstrom/Degree: ---
+   Internal Coordinate in Angstrom/Degree: 
+   Bond    :     1.194087    1.278846    1.278846
+   Angle   :      60.7148
+ 
+ -- End of Converged Internal Coordinates -------------------------------------
+                       Force-RMS    Force-Max     Step-RMS     Step-Max
+    Conv. tolerance :  0.2000E-03   0.3000E-03   0.8000E-03   0.1200E-02
+    Current values  :  0.1898E-01   0.3075E-01   0.6950E-01   0.9303E-01
+    Geom. converge  :     No           No           No           No  
+ 
+ 
+   Geometry Optimization step :    6
+ 
+  Single Point SCF for geometry optimization, also get force.
+ 
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 T bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22666162
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.226661616604
+     1   0.0053232145   0.0096397641   0.0000000000
+     2   0.0070845925  -0.0129959205   0.0000000000
+     3  -0.0124071939   0.0033559440   0.0000000000
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.21628E-06
+Departure from rotational invariance:    0.11466E-05
+Departure from translational invariance, after projection:    0.00000E+00
+Departure from rotational invariance, after projection:    0.00000E+00
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C        0.333666       0.481332       0.000000
+  N       -0.439758      -0.428425       0.000000
+  H       -0.884387       0.770638       0.000000
+ State=  1
+ Energy=    -93.22666162
+ Gradient=
+  C       -0.01087895       0.00170490       0.00000000
+  N        0.00592285      -0.01356451       0.00000000
+  H        0.00495610       0.01185962       0.00000000
+ 
+
+|******************************************************************************|
+ 
+  Force in Internal Coordinate: 
+    0.005747   -0.004698   -0.004698    0.021195
+ 
+ 
+  Projected Force in Internal Coordinate: 
+    0.005747   -0.004698   -0.004698    0.021195
+ 
+ dx= 0.46990035E-01 dg= 0.68455139E-01 dxdf= 0.13048978E-01 dxfcdx= 0.10895074E-01 df2= 0.50893957E-03
+ dx= 0.19319676E-01 dg= 0.18604952E-01 dxdf=-0.60509725E-04 dxfcdx=-0.27592291E-02 df2= 0.64636413E-03
+   Hessian updated (Bofill) with points:   4   5   6
+   Hessian eigen:-0.31561E-01 0.22328E+00 0.14861E+01 0.10000E+04
+   i=   1lam=    0.000000 sum=   -0.000858
+   i=   2lam=   -0.000858 sum=   -0.000855
+   i=   3lam=   -0.000855 sum=   -0.000855
+   i=   4lam=   -0.000855 sum=   -0.000855
+   rfostp mmin=  2 lam0=    0.007768 lam=   -0.000855
+   Quadratic Step size exceeded Trust Radius (  0.3000), scaled by   0.669
+            Internal coordinate steps (a.u./rad): 
+   Quad. :      0.001677    0.189607    0.189607   -0.134520
+   Total :      0.001677    0.189607    0.189607   -0.134520
+  Transforming internal coordinate to Cartesian...
+   iter=  1 rms(cart)= 0.06927728 rms(int)= 0.15047845
+   iter=  2 rms(cart)= 0.00360256 rms(int)= 0.00547046
+   iter=  3 rms(cart)= 0.00000803 rms(int)= 0.00001007
+   iter=  4 rms(cart)= 0.00000000 rms(int)= 0.00000000
+ 
+   [bdfopt_symmetrize_molecule]
+       2 symmetry operations are found, 
+     ...  2 of which are preserved by the current geometry perturbation.
+   Predict energy change:  0.12035E-02
+ 
+   Molecular Cartesian Coordinates (X,Y,Z) in Angstrom : 
+      C           0.26788944,      0.49267307,      0.00000000,
+      N          -0.41295006,     -0.48937583,      0.00000000,
+      H          -0.84541800,      0.82024789,      0.00000000,
+ 
+ -- Geometry Optimization Converged Internal Coordiants in Angstrom/Degree: ---
+   Internal Coordinate in Angstrom/Degree: 
+   Bond    :     1.194974    1.379182    1.379182
+   Angle   :      53.0074
+ 
+ -- End of Converged Internal Coordinates -------------------------------------
+                       Force-RMS    Force-Max     Step-RMS     Step-Max
+    Conv. tolerance :  0.2000E-03   0.3000E-03   0.8000E-03   0.1200E-02
+    Current values  :  0.1147E-01   0.2119E-01   0.1500E+00   0.1896E+00
+    Geom. converge  :     No           No           No           No  
+ 
+ 
+   Geometry Optimization step :    7
+ 
+  Single Point SCF for geometry optimization, also get force.
+ 
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 T bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22348983
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.223489832349
+     1  -0.0137414205   0.0126315181   0.0000000000
+     2   0.0126115501   0.0060737935   0.0000000000
+     3   0.0011323755  -0.0186991769   0.0000000000
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.22088E-05
+Departure from rotational invariance:    0.38495E-06
+Departure from translational invariance, after projection:    0.12930E-17
+Departure from rotational invariance, after projection:    0.17347E-17
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C        0.267889       0.492673       0.000000
+  N       -0.412950      -0.489376       0.000000
+  H       -0.845418       0.820248       0.000000
+ State=  1
+ Energy=    -93.22348983
+ Gradient=
+  C       -0.00543884       0.01785428       0.00000000
+  N       -0.01093089      -0.00874127       0.00000000
+  H        0.01636973      -0.00911301       0.00000000
+ 
+
+|******************************************************************************|
+ 
+  Force in Internal Coordinate: 
+   -0.011574    0.006893    0.006893    0.033065
+ 
+ 
+  Projected Force in Internal Coordinate: 
+   -0.011574    0.006893    0.006893    0.033065
+ 
+ dx= 0.90000000E-01 dg= 0.26639463E-01 dxdf=-0.27698838E-02 dxfcdx=-0.24069111E-02 df2= 0.98371449E-03
+   Hessian updated (Bofill) with points:   6   7
+   Hessian eigen:-0.46703E-01 0.23231E+00 0.14881E+01 0.10000E+04
+   i=   1lam=    0.000000 sum=   -0.005197
+   i=   2lam=   -0.005197 sum=   -0.005085
+   i=   3lam=   -0.005085 sum=   -0.005088
+   i=   4lam=   -0.005088 sum=   -0.005088
+   i=   5lam=   -0.005088 sum=   -0.005088
+   rfostp mmin=  2 lam0=    0.000081 lam=   -0.005088
+            Internal coordinate steps (a.u./rad): 
+   Quad. :     -0.006476   -0.004269   -0.004269    0.150923
+   Total :     -0.006476   -0.004269   -0.004269    0.150923
+  Transforming internal coordinate to Cartesian...
+   iter=  1 rms(cart)= 0.07897248 rms(int)= 0.07549411
+   iter=  2 rms(cart)= 0.00244032 rms(int)= 0.00571058
+   iter=  3 rms(cart)= 0.00000038 rms(int)= 0.00000065
+   iter=  4 rms(cart)= 0.00000000 rms(int)= 0.00000000
+ 
+   [bdfopt_symmetrize_molecule]
+       2 symmetry operations are found, 
+     ...  2 of which are preserved by the current geometry perturbation.
+   Predict energy change:  0.72227E-03
+ 
+   Molecular Cartesian Coordinates (X,Y,Z) in Angstrom : 
+      C           0.34941975,      0.45792168,      0.00000000,
+      N          -0.41451576,     -0.45651045,      0.00000000,
+      H          -0.92538261,      0.82213390,      0.00000000,
+ 
+ -- Geometry Optimization Converged Internal Coordiants in Angstrom/Degree: ---
+   Internal Coordinate in Angstrom/Degree: 
+   Bond    :     1.191547    1.376923    1.376923
+   Angle   :      61.6547
+ 
+ -- End of Converged Internal Coordinates -------------------------------------
+                       Force-RMS    Force-Max     Step-RMS     Step-Max
+    Conv. tolerance :  0.2000E-03   0.3000E-03   0.8000E-03   0.1200E-02
+    Current values  :  0.1818E-01   0.3306E-01   0.7559E-01   0.1509E+00
+    Geom. converge  :     No           No           No           No  
+ 
+ 
+   Geometry Optimization step :    8
+ 
+  Single Point SCF for geometry optimization, also get force.
+ 
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 T bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22239656
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.222396562211
+     1   0.0048310583  -0.0136389720   0.0000000000
+     2   0.0031555216  -0.0213949611   0.0000000000
+     3  -0.0079883346   0.0350333596   0.0000000000
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.61535E-06
+Departure from rotational invariance:    0.78760E-06
+Departure from translational invariance, after projection:    0.11565E-17
+Departure from rotational invariance, after projection:    0.34694E-17
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C        0.349420       0.457922       0.000000
+  N       -0.414516      -0.456510       0.000000
+  H       -0.925383       0.822134       0.000000
+ State=  1
+ Energy=    -93.22239656
+ Gradient=
+  C        0.00824733      -0.01188896       0.00000000
+  N        0.01552093      -0.01505960       0.00000000
+  H       -0.02376826       0.02694857       0.00000000
+ 
+
+|******************************************************************************|
+ 
+  Force in Internal Coordinate: 
+    0.003836   -0.016922   -0.016922   -0.031415
+ 
+ 
+  Projected Force in Internal Coordinate: 
+    0.003836   -0.016922   -0.016922   -0.031415
+ 
+ dx= 0.34505302E-01 dg= 0.44970338E-01 dxdf=-0.13152078E-02 dxfcdx= 0.34440164E-02 df2= 0.97243951E-03
+ dx= 0.22856232E-01 dg= 0.74360007E-01 dxdf= 0.96279305E-02 dxfcdx= 0.93817518E-03 df2= 0.37487938E-02
+ dx= 0.68992357E-01 dg= 0.55409883E-01 dxdf= 0.53847763E-02 dxfcdx= 0.19874163E-02 df2= 0.37641313E-03
+   Hessian updated (Bofill) with points:   4   7   6   8
+   Hessian eigen:-0.13869E-01 0.49587E+00 0.14835E+01 0.10000E+04
+   i=   1lam=    0.000000 sum=   -0.002913
+   i=   2lam=   -0.002913 sum=   -0.002897
+   i=   3lam=   -0.002897 sum=   -0.002897
+   i=   4lam=   -0.002897 sum=   -0.002897
+   rfostp mmin=  2 lam0=    0.005933 lam=   -0.002897
+   Quadratic Step size exceeded Trust Radius (  0.3000), scaled by   0.543
+            Internal coordinate steps (a.u./rad): 
+   Quad. :     -0.008676    0.184626    0.184626   -0.147483
+   Total :     -0.008676    0.184626    0.184626   -0.147483
+  Transforming internal coordinate to Cartesian...
+   iter=  1 rms(cart)= 0.07558043 rms(int)= 0.15044470
+   iter=  2 rms(cart)= 0.00407674 rms(int)= 0.00686330
+   iter=  3 rms(cart)= 0.00001110 rms(int)= 0.00001273
+   iter=  4 rms(cart)= 0.00000000 rms(int)= 0.00000000
+ 
+   [bdfopt_symmetrize_molecule]
+       2 symmetry operations are found, 
+     ...  2 of which are preserved by the current geometry perturbation.
+   Predict energy change:  0.44530E-02
+ 
+   Molecular Cartesian Coordinates (X,Y,Z) in Angstrom : 
+      C           0.27218054,      0.47204822,      0.00000000,
+      N          -0.38223053,     -0.51820949,      0.00000000,
+      H          -0.88042863,      0.86970641,      0.00000000,
+ 
+ -- Geometry Optimization Converged Internal Coordiants in Angstrom/Degree: ---
+   Internal Coordinate in Angstrom/Degree: 
+   Bond    :     1.186956    1.474623    1.474623
+   Angle   :      53.2045
+ 
+ -- End of Converged Internal Coordinates -------------------------------------
+                       Force-RMS    Force-Max     Step-RMS     Step-Max
+    Conv. tolerance :  0.2000E-03   0.3000E-03   0.8000E-03   0.1200E-02
+    Current values  :  0.1984E-01   0.3141E-01   0.1500E+00   0.1846E+00
+    Geom. converge  :     No           No           No           No  
+ 
+ 
+   Geometry Optimization step :    9
+ 
+  Single Point SCF for geometry optimization, also get force.
+ 
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 T bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22399539
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.223995389928
+     1  -0.0011458633  -0.0193758965   0.0000000000
+     2  -0.0019224497   0.0021513703   0.0000000000
+     3   0.0030706698   0.0172262138   0.0000000000
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.96624E-06
+Departure from rotational invariance:    0.72057E-05
+Departure from translational invariance, after projection:    0.11655E-17
+Departure from rotational invariance, after projection:    0.00000E+00
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C        0.272181       0.472048       0.000000
+  N       -0.382231      -0.518209       0.000000
+  H       -0.880429       0.869706       0.000000
+ State=  1
+ Energy=    -93.22399539
+ Gradient=
+  C        0.01848810      -0.00590928       0.00000000
+  N       -0.00131177       0.00256881       0.00000000
+  H       -0.01717633       0.00334048       0.00000000
+ 
+
+|******************************************************************************|
+ 
+  Force in Internal Coordinate: 
+   -0.005263   -0.004474   -0.004474   -0.041905
+ 
+ 
+  Projected Force in Internal Coordinate: 
+   -0.005263   -0.004474   -0.004474   -0.041905
+ 
+ dx= 0.65298522E-01 dg= 0.76932889E-01 dxdf= 0.44536679E-02 dxfcdx= 0.39984948E-02 df2= 0.87802245E-03
+ dx= 0.29110980E+00 dg= 0.64053867E-01 dxdf=-0.85857515E-02 dxfcdx=-0.15310353E-01 df2= 0.10106581E-02
+   Hessian updated (Bofill) with points:   7   6   9
+   Hessian eigen:-0.51406E-01 0.56565E+00 0.14818E+01 0.10000E+04
+   i=   1lam=    0.000000 sum=   -0.002947
+   i=   2lam=   -0.002947 sum=   -0.002931
+   i=   3lam=   -0.002931 sum=   -0.002932
+   i=   4lam=   -0.002932 sum=   -0.002932
+   rfostp mmin=  2 lam0=    0.002699 lam=   -0.002932
+            Internal coordinate steps (a.u./rad): 
+   Quad. :      0.005029   -0.164555   -0.164555    0.028943
+   Total :      0.005029   -0.164555   -0.164555    0.028943
+  Transforming internal coordinate to Cartesian...
+   iter=  1 rms(cart)= 0.04112778 rms(int)= 0.11721805
+   iter=  2 rms(cart)= 0.00039441 rms(int)= 0.00076441
+   iter=  3 rms(cart)= 0.00000008 rms(int)= 0.00000014
+   iter=  4 rms(cart)= 0.00000000 rms(int)= 0.00000000
+ 
+   [bdfopt_symmetrize_molecule]
+       2 symmetry operations are found, 
+     ...  2 of which are preserved by the current geometry perturbation.
+   Predict energy change:  0.24900E-02
+ 
+   Molecular Cartesian Coordinates (X,Y,Z) in Angstrom : 
+      C           0.28377333,      0.48368933,      0.00000000,
+      N          -0.40724412,     -0.48465127,      0.00000000,
+      H          -0.86700783,      0.82450707,      0.00000000,
+ 
+ -- Geometry Optimization Converged Internal Coordiants in Angstrom/Degree: ---
+   Internal Coordinate in Angstrom/Degree: 
+   Bond    :     1.189617    1.387544    1.387544
+   Angle   :      54.8628
+ 
+ -- End of Converged Internal Coordinates -------------------------------------
+                       Force-RMS    Force-Max     Step-RMS     Step-Max
+    Conv. tolerance :  0.2000E-03   0.3000E-03   0.8000E-03   0.1200E-02
+    Current values  :  0.2135E-01   0.4190E-01   0.1173E+00   0.1646E+00
+    Geom. converge  :     No           No           No           No  
+ 
+ 
+   Geometry Optimization step :   10
+ 
+  Single Point SCF for geometry optimization, also get force.
+ 
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 T bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.2242115
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.224211502028
+     1  -0.0009800955   0.0011114302   0.0000000000
+     2   0.0022102731  -0.0008423214   0.0000000000
+     3  -0.0012265069  -0.0002701145   0.0000000000
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.12687E-05
+Departure from rotational invariance:    0.74559E-05
+Departure from translational invariance, after projection:    0.36140E-19
+Departure from rotational invariance, after projection:    0.21684E-18
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C        0.283773       0.483689       0.000000
+  N       -0.407244      -0.484651       0.000000
+  H       -0.867008       0.824507       0.000000
+ State=  1
+ Energy=    -93.22421150
+ Gradient=
+  C       -0.00055024       0.00137877       0.00000000
+  N       -0.00024288      -0.00235156       0.00000000
+  H        0.00079312       0.00097279       0.00000000
+ 
+
+|******************************************************************************|
+ 
+  Force in Internal Coordinate: 
+   -0.000803   -0.000328   -0.000328    0.002807
+ 
+ 
+  Projected Force in Internal Coordinate: 
+   -0.000803   -0.000328   -0.000328    0.002807
+ 
+ dx= 0.14870761E-01 dg= 0.41754265E-01 dxdf= 0.33736510E-02 dxfcdx= 0.48769764E-02 df2= 0.20025007E-03
+ dx= 0.16505439E-02 dg= 0.33701825E-01 dxdf= 0.13170718E-02 dxfcdx= 0.87920967E-03 df2= 0.21871658E-03
+ dx= 0.94888888E-01 dg= 0.20474662E-01 dxdf=-0.37289528E-02 dxfcdx=-0.80124261E-02 df2= 0.81352288E-03
+   Hessian updated (Bofill) with points:   8   7   6  10
+   Hessian eigen:-0.42296E-01 0.83925E+00 0.14087E+01 0.10000E+04
+   i=   1lam=    0.000000 sum=   -0.000008
+   i=   2lam=   -0.000008 sum=   -0.000008
+   rfostp mmin=  2 lam0=    0.000051 lam=   -0.000008
+            Internal coordinate steps (a.u./rad): 
+   Quad. :     -0.002091    0.023446    0.023446   -0.010622
+   Total :     -0.002091    0.023446    0.023446   -0.010622
+  Transforming internal coordinate to Cartesian...
+   iter=  1 rms(cart)= 0.00708741 rms(int)= 0.01743822
+   iter=  2 rms(cart)= 0.00002474 rms(int)= 0.00004801
+   iter=  3 rms(cart)= 0.00000000 rms(int)= 0.00000000
+ 
+   [bdfopt_symmetrize_molecule]
+       2 symmetry operations are found, 
+     ...  2 of which are preserved by the current geometry perturbation.
+   Predict energy change:  0.21718E-04
+ 
+   Molecular Cartesian Coordinates (X,Y,Z) in Angstrom : 
+      C           0.27812491,      0.48320724,      0.00000000,
+      N          -0.40326797,     -0.49057992,      0.00000000,
+      H          -0.86533556,      0.83091781,      0.00000000,
+ 
+ -- Geometry Optimization Converged Internal Coordiants in Angstrom/Degree: ---
+   Internal Coordinate in Angstrom/Degree: 
+   Bond    :     1.188511    1.399951    1.399951
+   Angle   :      54.2542
+ 
+ -- End of Converged Internal Coordinates -------------------------------------
+                       Force-RMS    Force-Max     Step-RMS     Step-Max
+    Conv. tolerance :  0.2000E-03   0.3000E-03   0.8000E-03   0.1200E-02
+    Current values  :  0.1478E-02   0.2807E-02   0.1744E-01   0.2345E-01
+    Geom. converge  :     No           No           No           No  
+ 
+ 
+   Geometry Optimization step :   11
+ 
+  Single Point SCF for geometry optimization, also get force.
+ 
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 T bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22419603
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.224196031310
+     1  -0.0005791694   0.0000558600   0.0000000000
+     2   0.0002154568   0.0004912165   0.0000000000
+     3   0.0003673254  -0.0005485460   0.0000000000
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.13001E-05
+Departure from rotational invariance:    0.69410E-05
+Departure from translational invariance, after projection:    0.40406E-19
+Departure from rotational invariance, after projection:    0.00000E+00
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C        0.278125       0.483207       0.000000
+  N       -0.403268      -0.490580       0.000000
+  H       -0.865335       0.830918       0.000000
+ State=  1
+ Energy=    -93.22419603
+ Gradient=
+  C        0.00019929       0.00054921       0.00000000
+  N       -0.00053426       0.00001889       0.00000000
+  H        0.00033497      -0.00056810       0.00000000
+ 
+
+|******************************************************************************|
+ 
+  Force in Internal Coordinate: 
+   -0.000564    0.000323    0.000323    0.000340
+ 
+ 
+  Projected Force in Internal Coordinate: 
+   -0.000564    0.000323    0.000323    0.000340
+ 
+ dx= 0.37035090E-02 dg= 0.35755014E-01 dxdf= 0.13622985E-02 dxfcdx= 0.14752057E-02 df2= 0.51889080E-05
+ dx= 0.12166070E-02 dg= 0.26438084E-02 dxdf=-0.56227028E-04 dxfcdx=-0.75963001E-04 df2= 0.34781635E-06
+   Hessian updated (Bofill) with points:   7  10  11
+   Hessian eigen:-0.50300E-01 0.83684E+00 0.14049E+01 0.10000E+04
+   i=   1lam=    0.000000 sum=   -0.000001
+   i=   2lam=   -0.000001 sum=   -0.000001
+   rfostp mmin=  2 lam0=    0.000002 lam=   -0.000001
+            Internal coordinate steps (a.u./rad): 
+   Quad. :     -0.000094   -0.004133   -0.004133    0.002969
+   Total :     -0.000094   -0.004133   -0.004133    0.002969
+  Transforming internal coordinate to Cartesian...
+   iter=  1 rms(cart)= 0.00159968 rms(int)= 0.00327821
+   iter=  2 rms(cart)= 0.00000171 rms(int)= 0.00000295
+   iter=  3 rms(cart)= 0.00000000 rms(int)= 0.00000000
+ 
+   [bdfopt_symmetrize_molecule]
+       2 symmetry operations are found, 
+     ...  2 of which are preserved by the current geometry perturbation.
+   Predict energy change:  0.80467E-06
+ 
+   Molecular Cartesian Coordinates (X,Y,Z) in Angstrom : 
+      C           0.27964104,      0.48295555,      0.00000000,
+      N          -0.40391217,     -0.48925557,      0.00000000,
+      H          -0.86620749,      0.82984515,      0.00000000,
+ 
+ -- Geometry Optimization Converged Internal Coordiants in Angstrom/Degree: ---
+   Internal Coordinate in Angstrom/Degree: 
+   Bond    :     1.188461    1.397764    1.397764
+   Angle   :      54.4244
+ 
+ -- End of Converged Internal Coordinates -------------------------------------
+                       Force-RMS    Force-Max     Step-RMS     Step-Max
+    Conv. tolerance :  0.2000E-03   0.3000E-03   0.8000E-03   0.1200E-02
+    Current values  :  0.4011E-03   0.5642E-03   0.3278E-02   0.4133E-02
+    Geom. converge  :     No           No           No           No  
+ 
+ 
+   Geometry Optimization step :   12
+ 
+  Single Point SCF for geometry optimization, also get force.
+ 
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 T bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22419582
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.224195824515
+     1  -0.0000643793   0.0000159802   0.0000000000
+     2   0.0000724001   0.0000137550   0.0000000000
+     3  -0.0000042733  -0.0000313253   0.0000000000
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.13570E-05
+Departure from rotational invariance:    0.73857E-05
+Departure from translational invariance, after projection:    0.11294E-20
+Departure from rotational invariance, after projection:    0.67763E-20
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C        0.279641       0.482956       0.000000
+  N       -0.403912      -0.489256       0.000000
+  H       -0.866207       0.829845       0.000000
+ State=  1
+ Energy=    -93.22419582
+ Gradient=
+  C        0.00001325       0.00006775       0.00000000
+  N       -0.00004202      -0.00005798       0.00000000
+  H        0.00002876      -0.00000977       0.00000000
+ 
+
+|******************************************************************************|
+ 
+  Force in Internal Coordinate: 
+   -0.000063    0.000009    0.000009    0.000063
+ 
+ 
+  Projected Force in Internal Coordinate: 
+   -0.000063    0.000009    0.000009    0.000063
+ 
+ dx= 0.32291724E-02 dg= 0.36281997E-01 dxdf= 0.14412802E-02 dxfcdx= 0.14635501E-02 df2= 0.44260787E-06
+ dx= 0.80929246E-03 dg= 0.28817407E-02 dxdf=-0.32395285E-04 dxfcdx=-0.42499066E-04 df2= 0.12693664E-06
+ dx= 0.42991842E-04 dg= 0.72480342E-03 dxdf=-0.17255160E-05 dxfcdx=-0.15472416E-05 df2= 0.13276023E-07
+   Hessian updated (Bofill) with points:   7  10  11  12
+   Hessian eigen:-0.50151E-01 0.83968E+00 0.14033E+01 0.10000E+04
+   i=   1lam=    0.000000 sum=   -0.000000
+   rfostp mmin=  2 lam0=    0.000000 lam=    0.000000
+            Internal coordinate steps (a.u./rad): 
+   Quad. :     -0.000057    0.000137    0.000137    0.000006
+   Total :     -0.000057    0.000137    0.000137    0.000006
+  Transforming internal coordinate to Cartesian...
+   iter=  1 rms(cart)= 0.00004144 rms(int)= 0.00010073
+   iter=  2 rms(cart)= 0.00000000 rms(int)= 0.00000000
+ 
+   [bdfopt_symmetrize_molecule]
+       2 symmetry operations are found, 
+     ...  2 of which are preserved by the current geometry perturbation.
+ 
+    Good Job, Geometry Optimization converged in    12 iterations! 
+ 
+   Molecular Cartesian Coordinates (X,Y,Z) in Angstrom : 
+      C           0.27963637,      0.48292823,      0.00000000,
+      N          -0.40388200,     -0.48927044,      0.00000000,
+      H          -0.86623298,      0.82988734,      0.00000000,
+ 
+ -- Geometry Optimization Converged Internal Coordiants in Angstrom/Degree: ---
+   Internal Coordinate in Angstrom/Degree: 
+   Bond    :     1.188431    1.397836    1.397836
+   Angle   :      54.4247
+ 
+ -- End of Converged Internal Coordinates -------------------------------------
+                       Force-RMS    Force-Max     Step-RMS     Step-Max
+    Conv. tolerance :  0.2000E-03   0.3000E-03   0.8000E-03   0.1200E-02
+    Current values  :  0.4511E-04   0.6317E-04   0.1007E-03   0.1365E-03
+    Geom. converge  :     Yes          Yes          Yes          Yes 
+ 
+ 
+  Print Redundant internal coordinates of the converged geometry
+
+|******************************************************************************|
+       Redundant internal coordinates on Angstrom/Degree 
+
+  Name         Defination         Value     Constraint
+  R1          1   2               1.1884    No  
+  R2          2   3               1.3978    No  
+  R3          2   3               1.3978    No  
+
+|******************************************************************************|
+
+ 
+ Warning: since some gradients (especially DFT gradients) are inherently numeric
+ ally unstable,
+ we only require that the result agrees to the 4th digit,
+ which is enough for geometry optimizations.
+ ++++++++  DATA CHECK +++++++++++++++++++++++++++++++++
+  CHECKDATA:BDFOPT:OPTGEOM:          -1.1336          -0.3403           0.0000
+  CHECKDATA:BDFOPT:OPTGEOM:           1.0830           0.0211           0.0000
+  CHECKDATA:BDFOPT:OPTGEOM:          -0.7793           1.8942           0.0000
+ ++++++++++ END DATA CHECK ++++++++++++++++++++++++++++
+ 
+ 
+ [bdfopt_hess]
+ 
+ Start numerical Hessian calculation ...
+ Energy and gradient at unperturbed geometry...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22419581
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.224195809892
+     1  -0.0000643743   0.0000159120   0.0000000001
+     2   0.0000726528   0.0000136182  -0.0000000005
+     3  -0.0000044613  -0.0000312760  -0.0000000036
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.13992E-05
+Departure from rotational invariance:    0.76224E-05
+Departure from translational invariance, after projection:    0.15972E-20
+Departure from rotational invariance, after projection:    0.10164E-19
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C       -0.599882      -0.180059       0.000000
+  N        0.573098       0.011140       0.000000
+  H       -0.412395       1.002375       0.000000
+ State=  1
+ Energy=    -93.22419581
+ Gradient=
+  C       -0.00006680       0.00001764       0.00000000
+  N        0.00007071       0.00001239       0.00000000
+  H       -0.00000391      -0.00003002       0.00000000
+ 
+
+|******************************************************************************|
+ Displacing atom    1 (+x)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22419554
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.224195539362
+     1   0.0009479562   0.0001334080  -0.0000000023
+     2  -0.0009858127  -0.0001141820   0.0000000006
+     3   0.0000416899  -0.0000209615  -0.0000000039
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.14027E-05
+Departure from rotational invariance:    0.74459E-05
+Departure from translational invariance, after projection:    0.42931E-19
+Departure from rotational invariance, after projection:    0.27105E-19
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C       -0.599353      -0.180059       0.000000
+  N        0.573098       0.011140       0.000000
+  H       -0.412395       1.002375       0.000000
+ State=  1
+ Energy=    -93.22419554
+ Gradient=
+  C        0.00094555       0.00013510       0.00000000
+  N       -0.00098775      -0.00011538       0.00000000
+  H        0.00004220      -0.00001973       0.00000000
+ 
+
+|******************************************************************************|
+ Displacing atom    1 (-x)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22419545
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.224195451130
+     1  -0.0010728890  -0.0001009931  -0.0000000029
+     2   0.0011268453   0.0001408318  -0.0000000062
+     3  -0.0000502606  -0.0000416308  -0.0000000064
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.13691E-05
+Departure from rotational invariance:    0.74161E-05
+Departure from translational invariance, after projection:    0.59419E-19
+Departure from rotational invariance, after projection:    0.54210E-19
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C       -0.600411      -0.180059       0.000000
+  N        0.573098       0.011140       0.000000
+  H       -0.412395       1.002375       0.000000
+ State=  1
+ Energy=    -93.22419545
+ Gradient=
+  C       -0.00107524      -0.00009928      -0.00000000
+  N        0.00112496       0.00013966      -0.00000000
+  H       -0.00004972      -0.00004038       0.00000000
+ 
+
+|******************************************************************************|
+ Displacing atom    1 (+y)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22419573
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.224195731310
+     1   0.0000527587   0.0001531665   0.0000000011
+     2  -0.0000981809   0.0000708860  -0.0000000153
+     3   0.0000492155  -0.0002257601  -0.0000000047
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.13867E-05
+Departure from rotational invariance:    0.73372E-05
+Departure from translational invariance, after projection:    0.22588E-20
+Departure from rotational invariance, after projection:    0.13553E-19
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C       -0.599882      -0.179530       0.000000
+  N        0.573098       0.011140       0.000000
+  H       -0.412395       1.002375       0.000000
+ State=  1
+ Energy=    -93.22419573
+ Gradient=
+  C        0.00005038       0.00015484       0.00000000
+  N       -0.00010009       0.00006971       0.00000000
+  H        0.00004971      -0.00022455       0.00000000
+ 
+
+|******************************************************************************|
+ Displacing atom    1 (-y)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22419579
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.224195791854
+     1  -0.0001819729  -0.0001212054   0.0000000003
+     2   0.0002440188  -0.0000433125  -0.0000000014
+     3  -0.0000582360   0.0001627214  -0.0000000041
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.14041E-05
+Departure from rotational invariance:    0.82579E-05
+Departure from translational invariance, after projection:    0.93131E-20
+Departure from rotational invariance, after projection:    0.13553E-19
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C       -0.599882      -0.180588       0.000000
+  N        0.573098       0.011140       0.000000
+  H       -0.412395       1.002375       0.000000
+ State=  1
+ Energy=    -93.22419579
+ Gradient=
+  C       -0.00018449      -0.00011937      -0.00000000
+  N        0.00024202      -0.00004468      -0.00000000
+  H       -0.00005753       0.00016405      -0.00000000
+ 
+
+|******************************************************************************|
+ Displacing atom    1 (+z)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22419582
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.224195818768
+     1  -0.0000575839   0.0000191509   0.0000004871
+     2   0.0000571150   0.0000088861  -0.0000004848
+     3   0.0000042953  -0.0000297765  -0.0000000304
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.14011E-05
+Departure from rotational invariance:    0.16318E-04
+Departure from translational invariance, after projection:    0.19852E-22
+Departure from rotational invariance, after projection:    0.67791E-20
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C       -0.599882      -0.180059       0.000529
+  N        0.573098       0.011140       0.000000
+  H       -0.412395       1.002375       0.000000
+ State=  1
+ Energy=    -93.22419582
+ Gradient=
+  C       -0.00005639       0.00001729       0.00000002
+  N        0.00005728       0.00001334      -0.00000003
+  H       -0.00000088      -0.00003063       0.00000001
+ 
+
+|******************************************************************************|
+ Displacing atom    1 (-z)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22419582
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.224195821229
+     1  -0.0000650734   0.0000155801  -0.0000002631
+     2   0.0000732985   0.0000136394   0.0000002738
+     3  -0.0000043990  -0.0000309593  -0.0000000095
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.14010E-05
+Departure from rotational invariance:    0.74316E-05
+Departure from translational invariance, after projection:    0.49310E-20
+Departure from rotational invariance, after projection:    0.33890E-20
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C       -0.599882      -0.180059      -0.000529
+  N        0.573098       0.011140       0.000000
+  H       -0.412395       1.002375       0.000000
+ State=  1
+ Energy=    -93.22419582
+ Gradient=
+  C       -0.00006747       0.00001727      -0.00000002
+  N        0.00007137       0.00001246       0.00000003
+  H       -0.00000390      -0.00002973      -0.00000001
+ 
+
+|******************************************************************************|
+ Displacing atom    2 (+x)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22419479
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.224194790419
+     1  -0.0011191413  -0.0001545832   0.0000000209
+     2   0.0011337384   0.0001790387  -0.0000000230
+     3  -0.0000110374  -0.0000262581  -0.0000000067
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.13300E-05
+Departure from rotational invariance:    0.73894E-05
+Departure from translational invariance, after projection:    0.77659E-19
+Departure from rotational invariance, after projection:    0.20329E-19
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C       -0.599882      -0.180059       0.000000
+  N        0.573627       0.011140       0.000000
+  H       -0.412395       1.002375       0.000000
+ State=  1
+ Energy=    -93.22419479
+ Gradient=
+  C       -0.00112145      -0.00015287       0.00000000
+  N        0.00113190       0.00017788      -0.00000000
+  H       -0.00001045      -0.00002501       0.00000000
+ 
+
+|******************************************************************************|
+ Displacing atom    2 (-x)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22419551
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.224195513856
+     1   0.0009940886   0.0001870770  -0.0000000023
+     2  -0.0009926046  -0.0001524741   0.0000000006
+     3   0.0000023524  -0.0000363351  -0.0000000039
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.14031E-05
+Departure from rotational invariance:    0.74907E-05
+Departure from translational invariance, after projection:    0.27392E-19
+Departure from rotational invariance, after projection:    0.67763E-20
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C       -0.599882      -0.180059       0.000000
+  N        0.572569       0.011140       0.000000
+  H       -0.412395       1.002375       0.000000
+ State=  1
+ Energy=    -93.22419551
+ Gradient=
+  C        0.00099167       0.00018878       0.00000000
+  N       -0.00099454      -0.00015368      -0.00000000
+  H        0.00000287      -0.00003510       0.00000000
+ 
+
+|******************************************************************************|
+ Displacing atom    2 (+y)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22419582
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.224195815641
+     1  -0.0001919095   0.0000730811   0.0000000003
+     2   0.0002381783   0.0000110160  -0.0000000014
+     3  -0.0000424682  -0.0000858413  -0.0000000041
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.13939E-05
+Departure from rotational invariance:    0.73883E-05
+Departure from translational invariance, after projection:    0.22588E-20
+Departure from rotational invariance, after projection:    0.27105E-19
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C       -0.599882      -0.180059       0.000000
+  N        0.573098       0.011669       0.000000
+  H       -0.412395       1.002375       0.000000
+ State=  1
+ Energy=    -93.22419582
+ Gradient=
+  C       -0.00019430       0.00007477      -0.00000000
+  N        0.00023626       0.00000984      -0.00000000
+  H       -0.00004196      -0.00008461       0.00000000
+ 
+
+|******************************************************************************|
+ Displacing atom    2 (-y)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22419573
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.224195731178
+     1   0.0000755346  -0.0000328211  -0.0000000002
+     2  -0.0001175351   0.0000116580  -0.0000000006
+     3   0.0000457176   0.0000194252  -0.0000000033
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.13678E-05
+Departure from rotational invariance:    0.22378E-04
+Departure from translational invariance, after projection:    0.11294E-20
+Departure from rotational invariance, after projection:    0.74593E-24
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C       -0.599882      -0.180059       0.000000
+  N        0.573098       0.010610       0.000000
+  H       -0.412395       1.002375       0.000000
+ State=  1
+ Energy=    -93.22419573
+ Gradient=
+  C        0.00007768      -0.00003560      -0.00000000
+  N       -0.00011680       0.00001756       0.00000000
+  H        0.00003912       0.00001804       0.00000000
+ 
+
+|******************************************************************************|
+ Displacing atom    2 (+z)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22419581
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.224195810846
+     1  -0.0000644924   0.0000156701  -0.0000002760
+     2   0.0000717603   0.0000144438   0.0000003358
+     3  -0.0000034513  -0.0000318603  -0.0000000698
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.13991E-05
+Departure from rotational invariance:    0.73407E-05
+Departure from translational invariance, after projection:    0.28454E-21
+Departure from rotational invariance, after projection:    0.13553E-19
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C       -0.599882      -0.180059       0.000000
+  N        0.573098       0.011140       0.000529
+  H       -0.412395       1.002375       0.000000
+ State=  1
+ Energy=    -93.22419581
+ Gradient=
+  C       -0.00006687       0.00001735      -0.00000003
+  N        0.00006984       0.00001329       0.00000003
+  H       -0.00000297      -0.00003063       0.00000000
+ 
+
+|******************************************************************************|
+ Displacing atom    2 (-z)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22419581
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.224195810764
+     1  -0.0000670112   0.0000148898   0.0000003727
+     2   0.0000771497   0.0000144692  -0.0000005437
+     3  -0.0000063221  -0.0000311056   0.0000001729
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.13990E-05
+Departure from rotational invariance:    0.12151E-04
+Departure from translational invariance, after projection:    0.36706E-20
+Departure from rotational invariance, after projection:    0.10165E-19
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C       -0.599882      -0.180059       0.000000
+  N        0.573098       0.011140      -0.000529
+  H       -0.412395       1.002375       0.000000
+ State=  1
+ Energy=    -93.22419581
+ Gradient=
+  C       -0.00007012       0.00001729       0.00000003
+  N        0.00007481       0.00001217      -0.00000003
+  H       -0.00000469      -0.00002946       0.00000000
+ 
+
+|******************************************************************************|
+ Displacing atom    3 (+x)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.2241955
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.224195504408
+     1  -0.0000086848   0.0000729541  -0.0000004374
+     2   0.0000475123  -0.0000280013   0.0000004305
+     3  -0.0000349882  -0.0000466785  -0.0000000038
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.14031E-05
+Departure from rotational invariance:    0.12875E-04
+Departure from translational invariance, after projection:    0.22588E-20
+Departure from rotational invariance, after projection:    0.17561E-21
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C       -0.599882      -0.180059       0.000000
+  N        0.573098       0.011140       0.000000
+  H       -0.411865       1.002375       0.000000
+ State=  1
+ Energy=    -93.22419550
+ Gradient=
+  C       -0.00000802       0.00007160      -0.00000000
+  N        0.00004737      -0.00002437       0.00000000
+  H       -0.00003935      -0.00004723       0.00000000
+ 
+
+|******************************************************************************|
+ Displacing atom    3 (-x)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22419575
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.224195746194
+     1  -0.0001106600  -0.0000377198  -0.0000000006
+     2   0.0000794433   0.0000518257  -0.0000000004
+     3   0.0000349172  -0.0000158459  -0.0000000031
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.13631E-05
+Departure from rotational invariance:    0.72460E-05
+Departure from translational invariance, after projection:    0.23283E-20
+Departure from rotational invariance, after projection:    0.83012E-24
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C       -0.599882      -0.180059       0.000000
+  N        0.573098       0.011140       0.000000
+  H       -0.412924       1.002375       0.000000
+ State=  1
+ Energy=    -93.22419575
+ Gradient=
+  C       -0.00011299      -0.00003605      -0.00000000
+  N        0.00007757       0.00005068      -0.00000000
+  H        0.00003542      -0.00001463       0.00000000
+ 
+
+|******************************************************************************|
+ Displacing atom    3 (+y)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22419588
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.224195881201
+     1  -0.0000538486  -0.0001780959  -0.0000000010
+     2   0.0000771423  -0.0000406820   0.0000000015
+     3  -0.0000195370   0.0002170061  -0.0000000015
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.13845E-05
+Departure from rotational invariance:    0.72812E-05
+Departure from translational invariance, after projection:    0.22588E-20
+Departure from rotational invariance, after projection:    0.27105E-19
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C       -0.599882      -0.180059       0.000000
+  N        0.573098       0.011140       0.000000
+  H       -0.412395       1.002904       0.000000
+ State=  1
+ Energy=    -93.22419588
+ Gradient=
+  C       -0.00005620      -0.00017641       0.00000000
+  N        0.00007525      -0.00004182       0.00000000
+  H       -0.00001904       0.00021824       0.00000000
+ 
+
+|******************************************************************************|
+ Displacing atom    3 (-y)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22419567
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.224195669100
+     1  -0.0000741945   0.0002106002   0.0000000011
+     2   0.0000669343   0.0000680650  -0.0000000153
+     3   0.0000110393  -0.0002803704  -0.0000000047
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.13820E-05
+Departure from rotational invariance:    0.74282E-05
+Departure from translational invariance, after projection:    0.18289E-19
+Departure from rotational invariance, after projection:    0.27105E-19
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C       -0.599882      -0.180059       0.000000
+  N        0.573098       0.011140       0.000000
+  H       -0.412395       1.001846       0.000000
+ State=  1
+ Energy=    -93.22419567
+ Gradient=
+  C       -0.00007658       0.00021228      -0.00000000
+  N        0.00006502       0.00006686       0.00000000
+  H        0.00001156      -0.00027915      -0.00000000
+ 
+
+|******************************************************************************|
+ Displacing atom    3 (+z)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22419581
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.224195806769
+     1  -0.0000690332   0.0000139728  -0.0000000178
+     2   0.0000819815   0.0000152967  -0.0000000336
+     3  -0.0000091218  -0.0000310089   0.0000000586
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.14011E-05
+Departure from rotational invariance:    0.18484E-04
+Departure from translational invariance, after projection:    0.33087E-23
+Departure from rotational invariance, after projection:    0.67763E-20
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C       -0.599882      -0.180059       0.000000
+  N        0.573098       0.011140       0.000000
+  H       -0.412395       1.002375       0.000529
+ State=  1
+ Energy=    -93.22419581
+ Gradient=
+  C       -0.00007311       0.00001733       0.00000001
+  N        0.00007908       0.00001148      -0.00000000
+  H       -0.00000597      -0.00002880      -0.00000001
+ 
+
+|******************************************************************************|
+ Displacing atom    3 (-z)...
+ 
+ ### [bdf_single_point] ### nstate= 1
+ Do not allow rotation to standard orientation.
+ 
+ BDFOPT run - details of gradient calculations will be written
+ into .out.tmp file.
+ 
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/sbin/bdfsinglepoint.py test076 F bdfopt >> test076.o
+ ut.tmp
+  istatus                      0
+SYS.ARGV= test076 1 bdfopt
+
+SUMMARY via Extractors:
+=======================
+job type = ['SCF', 'RESP_GSGRAD']
+
+
+### JOB TYPE = SCF ###
+E_tot= -93.22419581
+Converge= YES
+
+
+### JOB TYPE = RESP_GSGRAD ###
+Energy= -93.224195807353
+     1  -0.0000642231   0.0000158507   0.0000000151
+     2   0.0000722936   0.0000136422   0.0000001284
+     3  -0.0000042438  -0.0000312321  -0.0000001775
+
+Final status: ierror= 0
+
+Sparsing successfully, write files !
+ 
+  BDF COMMAND: /home/wzk/work/bdf/bdf-pkg/sbin/bdf_extractor.py test076 1 bdfopt
+  istatus                      0
+ Projecting out translational and rotational components in gradient...
+ 
+ [bdfProjTransRot]
+ 
+Departure from translational invariance:    0.14012E-05
+Departure from rotational invariance:    0.73501E-05
+Departure from translational invariance, after projection:    0.20360E-20
+Departure from rotational invariance, after projection:    0.67763E-20
+ 
+ 
+|******************************************************************************|
+ Summary printing of molecular goemetry and gradient for this step
+
+ Atom         Coord           
+  C       -0.599882      -0.180059       0.000000
+  N        0.573098       0.011140       0.000000
+  H       -0.412395       1.002375      -0.000529
+ State=  1
+ Energy=    -93.22419581
+ Gradient=
+  C       -0.00006661       0.00001753      -0.00000001
+  N        0.00007037       0.00001248      -0.00000000
+  H       -0.00000376      -0.00003001       0.00000001
+ 
+
+|******************************************************************************|
+ Check consistency of numerical and analytic gradient:
+ 
+|--------------------------------------------------------------------------------|
+          Molecular gradient - Analytic gradient at unperturbed geometry
+ 
+        Atom            X                    Y                    Z
+        C             -0.0000668011          0.0000176373          0.0000000000
+        N              0.0000707080          0.0000123861          0.0000000000
+        H             -0.0000039069         -0.0000300234          0.0000000000
+|--------------------------------------------------------------------------------|
+ 
+ 
+|--------------------------------------------------------------------------------|
+          Molecular gradient - Numerical gradient at unperturbed geometry
+ 
+        Atom            X                    Y                    Z
+        C             -0.0000441160          0.0000302720          0.0000012305
+        N              0.0003617185         -0.0000422315         -0.0000000410
+        H              0.0001208930         -0.0001060505          0.0000002920
+|--------------------------------------------------------------------------------|
+ 
+ 
+|--------------------------------------------------------------------------------|
+          Molecular gradient - Numerical gradient minus analytic gradient
+ 
+        Atom            X                    Y                    Z
+        C              0.0000226851          0.0000126347          0.0000012305
+        N              0.0002910105         -0.0000546176         -0.0000000410
+        H              0.0001247999         -0.0000760271          0.0000002920
+|--------------------------------------------------------------------------------|
+ 
+ 
+|--------------------------------------------------------------------------------|
+          Molecular Hessian - Numerical Hessian (BDFOPT)
+ 
+                      1              2              3              4              5              6
+       1   1.0103970594   0.1173158305   0.0027695678  -1.0564570361  -0.1317546792   0.0008111051
+       2   0.1173158305   0.1371024289   0.0000040102  -0.1709416048   0.0561889227   0.0000153847
+       3   0.0027695678   0.0000040102   0.0000173741  -0.0035233049   0.0002215599  -0.0000314711
+       4  -1.0564570361  -0.1709416048  -0.0035233049   1.0632224042   0.1711546943  -0.0012417323
+       5  -0.1317546792   0.0561889227   0.0002215599   0.1711546943  -0.0038615766   0.0002786985
+       6   0.0008111051   0.0000153847  -0.0000314711  -0.0012417323   0.0002786985   0.0000325605
+       7   0.0492209116   0.0537231565   0.0007537371  -0.0108822907  -0.0390329459   0.0004306272
+       8   0.0102575365  -0.1943221841  -0.0002255701   0.0050799947  -0.0528334518  -0.0002940832
+       9  -0.0016245294  -0.0000514812   0.0000129070   0.0021761944  -0.0002494939   0.0000001690
+ 
+                      7              8              9
+       1   0.0492209116   0.0102575365  -0.0016245294
+       2   0.0537231565  -0.1943221841  -0.0000514812
+       3   0.0007537371  -0.0002255701   0.0000129070
+       4  -0.0108822907   0.0050799947   0.0021761944
+       5  -0.0390329459  -0.0528334518  -0.0002494939
+       6   0.0004306272  -0.0002940832   0.0000001690
+       7  -0.0373826332  -0.0158019826  -0.0005516649
+       8  -0.0158019826   0.2486925741   0.0003009751
+       9  -0.0005516649   0.0003009751  -0.0000131445
+ 
+|--------------------------------------------------------------------------------|
+ 
+ 
+ Warning: since some Hessians (especially DFT Hessians) are inherently numerical
+ ly unstable,
+ we only require that the result agrees to the 4th digit,
+ which is enough for thermochemistry.
+ ++++++++  DATA CHECK +++++++++++++++++++++++++++++++++
+  CHECKDATA:BDFOPT:HESSIAN:           1.0104           0.1173           0.0028
+  CHECKDATA:BDFOPT:HESSIAN:           0.1173           0.1371           0.0000
+  CHECKDATA:BDFOPT:HESSIAN:           0.0028           0.0000           0.0000
+  CHECKDATA:BDFOPT:HESSIAN:          -1.0565          -0.1709          -0.0035
+  CHECKDATA:BDFOPT:HESSIAN:          -0.1318           0.0562           0.0002
+  CHECKDATA:BDFOPT:HESSIAN:           0.0008           0.0000           0.0000
+  CHECKDATA:BDFOPT:HESSIAN:           0.0492           0.0537           0.0008
+  CHECKDATA:BDFOPT:HESSIAN:           0.0103          -0.1943          -0.0002
+  CHECKDATA:BDFOPT:HESSIAN:          -0.0016          -0.0001           0.0000
+  CHECKDATA:BDFOPT:HESSIAN:          -1.0565          -0.1318           0.0008
+  CHECKDATA:BDFOPT:HESSIAN:          -0.1709           0.0562           0.0000
+  CHECKDATA:BDFOPT:HESSIAN:          -0.0035           0.0002           0.0000
+  CHECKDATA:BDFOPT:HESSIAN:           1.0632           0.1712          -0.0012
+  CHECKDATA:BDFOPT:HESSIAN:           0.1712          -0.0039           0.0003
+  CHECKDATA:BDFOPT:HESSIAN:          -0.0012           0.0003           0.0000
+  CHECKDATA:BDFOPT:HESSIAN:          -0.0109          -0.0390           0.0004
+  CHECKDATA:BDFOPT:HESSIAN:           0.0051          -0.0528          -0.0003
+  CHECKDATA:BDFOPT:HESSIAN:           0.0022          -0.0002           0.0000
+  CHECKDATA:BDFOPT:HESSIAN:           0.0492           0.0103          -0.0016
+  CHECKDATA:BDFOPT:HESSIAN:           0.0537          -0.1943          -0.0001
+  CHECKDATA:BDFOPT:HESSIAN:           0.0008          -0.0002           0.0000
+  CHECKDATA:BDFOPT:HESSIAN:          -0.0109           0.0051           0.0022
+  CHECKDATA:BDFOPT:HESSIAN:          -0.0390          -0.0528          -0.0002
+  CHECKDATA:BDFOPT:HESSIAN:           0.0004          -0.0003           0.0000
+  CHECKDATA:BDFOPT:HESSIAN:          -0.0374          -0.0158          -0.0006
+  CHECKDATA:BDFOPT:HESSIAN:          -0.0158           0.2487           0.0003
+  CHECKDATA:BDFOPT:HESSIAN:          -0.0006           0.0003           0.0000
+ ++++++++++ END DATA CHECK ++++++++++++++++++++++++++++
+ 
+ 
+ Entering thermochemistry analysis...
+ 
+ =======================================================================================================================
+       _/     _/                _/     _/            _/     _/
+      _/     _/            _/  _/|  _/_/            _/     _/  _/  _/        UniMoVib:          A unified interface for
+     _/     _/   _/_/_/       _/ |_/ _/   _/_/_/   _/     _/      _/           molecular harmonic vibrational frequency
+    _/     _/  _/    _/  _/  _/  _/ _/  _/    _/  _/     _/  _/  _/_/_/        calculations.
+   _/     _/  _/    _/  _/  _/     _/  _/    _/  _/    _/   _/  _/   _/
+  _/     _/  _/    _/  _/  _/     _/  _/    _/   _/  _/    _/  _/   _/       Ver. 1.2.3, Jun 05, 2019
+   _/_/_/   _/    _/  _/  _/     _/   _/_/_/     _/_/     _/  _/_/_/         https://github.com/zorkzou/UniMoVib
+ =======================================================================================================================
+
+
+ Data Format:     UniMoVib
+ FCHK file:       test076.umv
+
+
+ Cartesian coordinates (Angstrom)
+ ------------------------------------------------------------------------------------------
+   No.   Atom    ZA                 X             Y             Z                Mass
+ ------------------------------------------------------------------------------------------
+     1    C       6           -0.59988203   -0.18005876    0.00000000           11.99670900
+     2    N       7            0.57309811    0.01113965    0.00000000           14.00307000
+     3    H       1           -0.41239462    1.00237497    0.00000000            1.00727647
+ ------------------------------------------------------------------------------------------
+
+
+ <<< POINT GROUP SYMMETRY >>>
+ Electronic Wavefunctions      :  Cs  
+ Nuclear & Total Wavefunctions :  Cs  
+
+
+ ************************************
+ ***  Properties of Normal Modes  ***
+ ************************************
+
+ Results of vibrations:
+ Normal frequencies (cm^-1), reduced masses (AMU), force constants (mDyn/A)
+
+                                                   1                                 2                                 3
+          Irreps                                  A'                                A'                                A'
+     Frequencies                          -1103.7431                         2092.3734                         2628.7321
+  Reduced masses                              1.1680                           11.9771                            1.0591
+ Force constants                             -0.8383                           30.8943                            4.3120
+        Atom  ZA               X         Y         Z             X         Y         Z             X         Y         Z
+           1   6         0.04310   0.07858   0.00000       0.71570   0.08969   0.00000      -0.00280  -0.06627   0.00000
+           2   7         0.03451  -0.06621   0.00000      -0.62965  -0.08775   0.00000       0.00688  -0.01485   0.00000
+           3   1        -0.99305  -0.01547   0.00000       0.22929   0.15166   0.00000      -0.06233   0.99571   0.00000
+
+ Results of translations and rotations:
+
+                                                   1                                 2                                 3
+          Irreps                                  A'                                A'                                A"
+     Frequencies                             -0.0000                           -0.0000                           -0.0099
+  Reduced masses                              9.0024                            9.0024                            9.0024
+ Force constants                             -0.0000                           -0.0000                           -0.0000
+        Atom  ZA               X         Y         Z             X         Y         Z             X         Y         Z
+           1   6         0.57735   0.00000   0.00000       0.00000   0.57735   0.00000       0.00000   0.00000   0.57735
+           2   7         0.57735   0.00000   0.00000       0.00000   0.57735   0.00000       0.00000   0.00000   0.57735
+           3   1         0.57735   0.00000   0.00000       0.00000   0.57735   0.00000       0.00000   0.00000   0.57735
+
+                                                   4                                 5                                 6
+          Irreps                                  A"                                A"                                A'
+     Frequencies                            -19.1793                           11.0784                            7.5015
+  Reduced masses                              1.0525                           11.5840                            5.2892
+ Force constants                             -0.0002                            0.0008                            0.0002
+        Atom  ZA               X         Y         Z             X         Y         Z             X         Y         Z
+           1   6         0.00000   0.00000  -0.06028       0.00000   0.00000  -0.70476      -0.10192   0.43771   0.00000
+           2   7         0.00000   0.00000  -0.02015       0.00000   0.00000   0.62758       0.03413  -0.39689   0.00000
+           3   1         0.00000   0.00000   0.99798       0.00000   0.00000  -0.33085       0.73941   0.30431   0.00000
+
+
+ *********************************************
+ ***   Thermal Contributions to Energies   ***
+ *********************************************
+
+ Molecular mass            :        27.007055    AMU
+ Electronic total energy   :       -93.224196    Hartree
+ Scale factor of Frequency :         1.000000
+ Rotational symmetry number:         1
+ The Cs   point group is used to calculate rotational entropy.
+
+ Principal axes and moments of inertia in atomic units:
+                                     1                   2                   3
+     Eigenvalues --                  4.437409           32.871029           37.308438
+           X                        -0.992212           -0.124559            0.000000
+           Y                        -0.124559            0.992212            0.000000
+           Z                         0.000000            0.000000            1.000000
+
+ Rotational temperatures            19.519008            2.634959            2.321561    Kelvin
+ Rot. constants A, B, C             13.566406            1.831390            1.613568    cm^-1
+                                   406.710626           54.903702           48.373540    GHz
+
+
+ #   1    Temperature =       298.15000 Kelvin         Pressure =         1.00000 Atm
+ ====================================================================================
+
+ Thermal correction energies                              Hartree            kcal/mol
+ Zero-point Energy                          :            0.010755            6.749159
+ Thermal correction to Energy               :            0.013588            8.526886
+ Thermal correction to Enthalpy             :            0.014533            9.119371
+ Thermal correction to Gibbs Free Energy    :           -0.010253           -6.434137
+
+ Sum of electronic and zero-point Energies  :          -93.213440
+ Sum of electronic and thermal Energies     :          -93.210607
+ Sum of electronic and thermal Enthalpies   :          -93.209663
+ Sum of electronic and thermal Free Energies:          -93.234449
+ ====================================================================================
+
+
+ UniMoVib job terminated correctly! Sat May  8 14:49:58 2021
+
+
+
+  BDF COMMAND: 
+ /home/wzk/work/bdf/bdf-pkg/bin/unimovib.exe -b < test076.unimovib.input
+  istatus                      0
+ CHECKDATA: UniMoVib completed successfully!
+|******************************************************************************|
+ 
+    Total cpu     time:          0.02  S
+    Total system  time:          0.06  S
+    Total wall    time:         57.76  S
+ 
+    Current time   2021-05-08  14:49:58
+    End running module bdfopt
+|******************************************************************************|
+ 
+/home/wzk/scratch/18865 /work/wzk/bdf/test/test076

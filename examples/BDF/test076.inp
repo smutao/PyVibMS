@@ -1,0 +1,77 @@
+# Zikuan Wang, 2019.7.17
+#
+# Optfreq of the HCN -> HNC isomerization TS (Hessian is calculated numerically).
+# A test of: 
+#  (1) TS optimization;
+#  (2) Numerical Hessian;
+#  (3) Thermochemistry analysis.
+#
+# Initial geometry: taken from Baker's test set
+#
+# Benchmark:
+#   Geometry optimization converged in 12 iterations
+#   Energy: -93.22419570 a.u.
+# 	Converged geometry:
+#   Molecular Cartesian Coordinates (X,Y,Z) in Angstrom : 
+#      C           0.27970346,      0.48251179,      0.00000000,
+#      N          -0.40437299,     -0.48933673,      0.00000000,
+#      H          -0.86580909,      0.83037007,      0.00000000,
+#   
+#   Vibrational frequencies (cm^{-1}):
+#      -1121.2902    2090.4380    2628.0176
+#   Gibbs free energy correction: -6.437983 kcal/mol
+#
+#   ORCA 4.0.0:
+#   Energy: -93.224198601087 a.u.
+#   Vibrational frequencies (cm^{-1}):
+#      -1122.04      2091.07      2626.81
+#   Gibbs free energy correction: -6.45 kcal/mol
+#   (note that ORCA's treatment of rotational number is wrong, thus the Gibbs
+#   free energy correction is manually corrected)
+#
+# Allowed error: 1.d-3 Bohr for geometry, 1.d-5 a.u. for energy,
+#                3 cm^{-1} for frequency, 0.1 kcal/mol for Gibbs free energy correction
+#
+$compass
+title
+ HCN <-> HNC transition state
+basis
+ def2-SVP
+geometry
+ C                  0.00000000    0.00000000    0.00000000
+ N                  0.00000000    0.00000000    1.14838000
+ H                  1.58536000    0.00000000    1.14838000
+end geometry
+skeleton
+check
+$end
+
+$bdfopt
+iprt
+ 3
+solver
+ 1
+hess
+# Calculate initial Hessian to aid geometry convergence;
+# calculate final Hessian to obtain frequencies and thermochemical data.
+# If only the frequencies at the current geometry are needed, replace
+# "init+final" by "only".
+ init+final
+iopt
+ 10 # specifies a TS optimization
+$end
+
+$xuanyuan
+direct
+schwarz
+$end
+
+$scf
+rks
+dft
+ b3lyp
+$end
+
+$resp
+geom
+$end
