@@ -1108,7 +1108,9 @@ def run_plugin_gui():
                       cmd.select("pka","id "+str(i+1)+" and "+" model "+obj_name) # select atom here...
                       cmd.select("pkb","id "+str(j+1)+" and "+" model "+obj_name)
                       if valence == 1.0:
-                         cmd.bond("pka","pkb") # just in case no bond is shown
+                         #cmd.bond("pka","pkb") # just in case no bond is shown
+                         cmd.bond("id "+str(i+1)+" and "+" model "+obj_name,"id "+str(j+1)+" and "+" model "+obj_name)
+                         # above line is to correct a bug in cmd.bond 
                          cmd.valence("1","pka","pkb")
                          cmd.set("valence_mode","0")
                          cmd.set("valence_size","0.06")
