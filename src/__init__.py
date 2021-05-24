@@ -1111,7 +1111,11 @@ def run_plugin_gui():
                          #cmd.bond("pka","pkb") # just in case no bond is shown
                          cmd.bond("id "+str(i+1)+" and "+" model "+obj_name,"id "+str(j+1)+" and "+" model "+obj_name)
                          # above line is to correct a bug in cmd.bond 
-                         cmd.valence("1","pka","pkb")
+                         #cmd.valence("1","pka","pkb")
+                         # above line is causing another issue
+                         cmd.valence("1","id "+str(i+1)+" and "+" model "+obj_name,"id "+str(j+1)+" and "+" model "+obj_name)
+
+
                          cmd.set("valence_mode","0")
                          cmd.set("valence_size","0.06")
                       if valence == 2.0:
