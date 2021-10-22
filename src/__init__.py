@@ -1079,6 +1079,13 @@ def run_plugin_gui():
            if dis <= 2.50:
               val = 1.0  
 
+        if lis2 == ["Re","H"] or lis2 == ["H","Re"]:
+           val = 0.0
+           if dis <= 1.72:
+              val = 1.0  
+
+
+
         return val    
     
 
@@ -1119,15 +1126,18 @@ def run_plugin_gui():
                          cmd.set("valence_mode","0")
                          cmd.set("valence_size","0.06")
                       if valence == 2.0:
-                         cmd.valence("2","pka","pkb")
+                         #cmd.valence("2","pka","pkb")
+                         cmd.valence("2","id "+str(i+1)+" and "+" model "+obj_name,"id "+str(j+1)+" and "+" model "+obj_name)
                          cmd.set("valence_mode","0")
                          cmd.set("valence_size","0.06")
                       if valence == 3.0:
-                         cmd.valence("3","pka","pkb")
+                         #cmd.valence("3","pka","pkb")
+                         cmd.valence("3","id "+str(i+1)+" and "+" model "+obj_name,"id "+str(j+1)+" and "+" model "+obj_name)
                          cmd.set("valence_mode","0")
                          cmd.set("valence_size","0.06")
                       if valence == 1.5:
-                         cmd.valence("4","pka","pkb")
+                         cmd.valence("4","id "+str(i+1)+" and "+" model "+obj_name,"id "+str(j+1)+" and "+" model "+obj_name) 
+                         #cmd.valence("4","pka","pkb")
                          cmd.set("valence_mode","0")
                          cmd.set("valence_size","0.06")
                          if insert_flag == 1:
@@ -1351,7 +1361,8 @@ def run_plugin_gui():
                y = xyz[i][1]
             if z > xyz[i][2]:
                z = xyz[i][2]
-        return [x,y,z] 
+        #return [x,y,z] 
+        return [0.0,0.0,0.0]
 
 
     def append_xyz_multiple(old,add,n): # ??? 
@@ -2448,8 +2459,8 @@ def run_plugin_gui():
            cmd.hide("label","bv_1")
            cmd.set("dash_color","red","bv_1")
            cmd.set("dash_gap","0.01","bv_1")
-           cmd.set("dash_radius","0.015","bv_1")
-           cmd.set("dash_transparency","0.75","bv_1")
+           cmd.set("dash_radius","0.03","bv_1")
+           cmd.set("dash_transparency","0.5","bv_1")
            cmd.disable("basis_1") 
 
         if int(d)>=2:
@@ -2458,8 +2469,8 @@ def run_plugin_gui():
            cmd.hide("label","bv_2")
            cmd.set("dash_color","green","bv_2")
            cmd.set("dash_gap","0.01","bv_2")
-           cmd.set("dash_radius","0.015","bv_2")
-           cmd.set("dash_transparency","0.75","bv_2")
+           cmd.set("dash_radius","0.03","bv_2")
+           cmd.set("dash_transparency","0.5","bv_2")
            cmd.disable("basis_2") 
 
            
@@ -2469,15 +2480,15 @@ def run_plugin_gui():
            cmd.hide("label","bv_2_b")
            cmd.set("dash_color","green","bv_2_b")
            cmd.set("dash_gap","0.01","bv_2_b")
-           cmd.set("dash_radius","0.015","bv_2_b")
-           cmd.set("dash_transparency","0.75","bv_2_b")
+           cmd.set("dash_radius","0.03","bv_2_b")
+           cmd.set("dash_transparency","0.5","bv_2_b")
 
            cmd.distance("bv_1_b","basis_2","basis_1p2")
            cmd.hide("label","bv_1_b")
            cmd.set("dash_color","red","bv_1_b")
            cmd.set("dash_gap","0.01","bv_1_b")
-           cmd.set("dash_radius","0.015","bv_1_b")
-           cmd.set("dash_transparency","0.75","bv_1_b")
+           cmd.set("dash_radius","0.03","bv_1_b")
+           cmd.set("dash_transparency","0.5","bv_1_b")
            cmd.disable("basis_1p2")
 
         if int(d)==3:
@@ -2486,8 +2497,8 @@ def run_plugin_gui():
            cmd.hide("label","bv_3")
            cmd.set("dash_color","blue","bv_3")
            cmd.set("dash_gap","0.01","bv_3")
-           cmd.set("dash_radius","0.015","bv_3")
-           cmd.set("dash_transparency","0.75","bv_3")
+           cmd.set("dash_radius","0.03","bv_3")
+           cmd.set("dash_transparency","0.5","bv_3")
            cmd.disable("basis_3")
 
            cmd.pseudoatom (pos=list_add(v1,list_add(MIN_Corner,v3)), object="basis_3p1")  
@@ -2495,8 +2506,8 @@ def run_plugin_gui():
            cmd.hide("label","bv_3_b")
            cmd.set("dash_color","blue","bv_3_b")
            cmd.set("dash_gap","0.01","bv_3_b")
-           cmd.set("dash_radius","0.015","bv_3_b")
-           cmd.set("dash_transparency","0.75","bv_3_b")
+           cmd.set("dash_radius","0.03","bv_3_b")
+           cmd.set("dash_transparency","0.5","bv_3_b")
            cmd.disable("basis_3p1")
 
            cmd.pseudoatom (pos=list_add(v2,list_add(MIN_Corner,v3)), object="basis_3p2")  
@@ -2504,8 +2515,8 @@ def run_plugin_gui():
            cmd.hide("label","bv_3_c")
            cmd.set("dash_color","blue","bv_3_c")
            cmd.set("dash_gap","0.01","bv_3_c")
-           cmd.set("dash_radius","0.015","bv_3_c")
-           cmd.set("dash_transparency","0.75","bv_3_c")
+           cmd.set("dash_radius","0.03","bv_3_c")
+           cmd.set("dash_transparency","0.5","bv_3_c")
            cmd.disable("basis_3p2")
 
            cmd.pseudoatom (pos=list_add(v1,list_add(v2,list_add(MIN_Corner,v3))), object="basis_3p1p2")  
@@ -2513,8 +2524,8 @@ def run_plugin_gui():
            cmd.hide("label","bv_3_d")
            cmd.set("dash_color","blue","bv_3_d")
            cmd.set("dash_gap","0.01","bv_3_d")
-           cmd.set("dash_radius","0.015","bv_3_d")
-           cmd.set("dash_transparency","0.75","bv_3_d")
+           cmd.set("dash_radius","0.03","bv_3_d")
+           cmd.set("dash_transparency","0.5","bv_3_d")
            cmd.disable("basis_3p1p2")
 
            # red
@@ -2522,30 +2533,30 @@ def run_plugin_gui():
            cmd.hide("label","bv_1_d")
            cmd.set("dash_color","red","bv_1_d")
            cmd.set("dash_gap","0.01","bv_1_d")
-           cmd.set("dash_radius","0.015","bv_1_d")
-           cmd.set("dash_transparency","0.75","bv_1_d")
+           cmd.set("dash_radius","0.03","bv_1_d")
+           cmd.set("dash_transparency","0.5","bv_1_d")
 
            cmd.distance("bv_1_c","basis_3p2","basis_3p1p2")
            cmd.hide("label","bv_1_c")
            cmd.set("dash_color","red","bv_1_c")
            cmd.set("dash_gap","0.01","bv_1_c")
-           cmd.set("dash_radius","0.015","bv_1_c")
-           cmd.set("dash_transparency","0.75","bv_1_c")
+           cmd.set("dash_radius","0.03","bv_1_c")
+           cmd.set("dash_transparency","0.5","bv_1_c")
 
            # green 
            cmd.distance("bv_2_d","basis_3","basis_3p2")
            cmd.hide("label","bv_2_d")
            cmd.set("dash_color","green","bv_2_d")
            cmd.set("dash_gap","0.01","bv_2_d")
-           cmd.set("dash_radius","0.015","bv_2_d")
-           cmd.set("dash_transparency","0.75","bv_1_d")
+           cmd.set("dash_radius","0.03","bv_2_d")
+           cmd.set("dash_transparency","0.5","bv_1_d")
 
            cmd.distance("bv_2_c","basis_3p1","basis_3p1p2")
            cmd.hide("label","bv_2_c")
            cmd.set("dash_color","green","bv_2_c")
            cmd.set("dash_gap","0.01","bv_2_c")
-           cmd.set("dash_radius","0.015","bv_2_c")
-           cmd.set("dash_transparency","0.75","bv_2_c")
+           cmd.set("dash_radius","0.03","bv_2_c")
+           cmd.set("dash_transparency","0.5","bv_2_c")
 
         cmd.delete("basis_*") # try to remove these pseudoatoms
 
