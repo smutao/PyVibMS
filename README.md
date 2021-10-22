@@ -7,6 +7,8 @@ A PyMOL plugin for visualizing vibrations in molecules and solids
 
 Updates
 -----
+Oct 22, 2021 - [Bug fix](https://github.com/smutao/PyVibMS/commit/896fdf0123e50fc180b4de98caa49dfd4a515ece) 
+
 May 8, 2021 - Add example for [BDF](http://182.92.69.169:7226)
 
 May 5, 2021 - Add examples for [UniMoVib](https://github.com/zorkzou/UniMoVib/) which can generate XYZ and mode files for PyVibMS
