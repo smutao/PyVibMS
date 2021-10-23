@@ -2448,7 +2448,10 @@ def run_plugin_gui():
 
         #
         xyz_coor = cmd.get_model('geom', 1).get_coord_list()
-        MIN_Corner = get_min_corner(xyz_coor)
+
+        user_origin = [float(m.strip()) for m in form.input_origin.text().split(",")]  
+
+        MIN_Corner = user_origin #get_min_corner(xyz_coor)
 
         # do we need to delete pseudoatoms later?  
         cmd.pseudoatom (pos=MIN_Corner, object="basis_o")

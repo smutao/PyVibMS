@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>514</width>
-    <height>707</height>
+    <width>650</width>
+    <height>720</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -23,7 +23,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <property name="spacing">
-      <number>-1</number>
+      <number>7</number>
      </property>
      <property name="topMargin">
       <number>0</number>
@@ -34,7 +34,7 @@
      <item>
       <widget class="QLabel" name="label">
        <property name="enabled">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -45,7 +45,7 @@
        <property name="minimumSize">
         <size>
          <width>0</width>
-         <height>66</height>
+         <height>76</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -72,7 +72,7 @@
         </font>
        </property>
        <property name="cursor">
-        <cursorShape>WaitCursor</cursorShape>
+        <cursorShape>ArrowCursor</cursorShape>
        </property>
        <property name="mouseTracking">
         <bool>false</bool>
@@ -119,9 +119,12 @@
     <layout class="QGridLayout" name="gridLayout_4">
      <item row="0" column="0">
       <widget class="QLabel" name="label_7">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="minimumSize">
         <size>
-         <width>70</width>
+         <width>80</width>
          <height>0</height>
         </size>
        </property>
@@ -244,15 +247,8 @@
    <item>
     <layout class="QGridLayout" name="gridLayout_2">
      <property name="verticalSpacing">
-      <number>-1</number>
+      <number>7</number>
      </property>
-     <item row="1" column="4">
-      <widget class="QPushButton" name="button_confirm">
-       <property name="text">
-        <string>Confirm</string>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="2">
       <widget class="QLabel" name="label_8">
        <property name="text">
@@ -263,17 +259,38 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="label_26">
+     <item row="5" column="1" colspan="4">
+      <widget class="QLineEdit" name="input_v3">
        <property name="text">
-        <string>a2</string>
+        <string>enter three float numbers separated by &quot;,&quot;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_27">
+       <property name="text">
+        <string>a1</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
-     <item row="4" column="0">
+     <item row="6" column="0" colspan="2">
+      <widget class="QPushButton" name="button_unitCell">
+       <property name="text">
+        <string>Unit/Primitive Cell</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="4">
+      <widget class="QPushButton" name="button_confirm">
+       <property name="text">
+        <string>Confirm</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
       <widget class="QLabel" name="label_25">
        <property name="text">
         <string>a3</string>
@@ -283,31 +300,37 @@
        </property>
       </widget>
      </item>
-     <item row="3" column="1" colspan="4">
+     <item row="4" column="1" colspan="4">
       <widget class="QLineEdit" name="input_v2">
        <property name="text">
         <string>and</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="1" colspan="4">
-      <widget class="QLineEdit" name="input_v3">
+     <item row="6" column="2" colspan="2">
+      <widget class="QPushButton" name="button_supercell">
        <property name="text">
-        <string>enter three float numbers separated by &quot;,&quot;</string>
+        <string>Make Supercell</string>
        </property>
       </widget>
      </item>
-     <item row="5" column="4">
+     <item row="6" column="4">
       <widget class="QPushButton" name="button_clearCell">
        <property name="text">
         <string>Clear</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_27">
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_24">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="text">
-        <string>a1</string>
+        <string>Lattice Vectors (Å)</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -341,37 +364,7 @@
        </item>
       </widget>
      </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_24">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>Lattice Vectors (Å)</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="2" colspan="2">
-      <widget class="QPushButton" name="button_supercell">
-       <property name="text">
-        <string>Make Supercell</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="0" colspan="2">
-      <widget class="QPushButton" name="button_unitCell">
-       <property name="text">
-        <string>Unit/Primitive Cell</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1" colspan="4">
+     <item row="3" column="1" colspan="4">
       <widget class="QLineEdit" name="input_v1">
        <property name="text">
         <string>please clear here </string>
@@ -381,6 +374,33 @@
        </property>
        <property name="readOnly">
         <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_26">
+       <property name="text">
+        <string>a2</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1" colspan="4">
+      <widget class="QLineEdit" name="input_origin">
+       <property name="text">
+        <string>0.0, 0.0, 0.0</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>origin</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
