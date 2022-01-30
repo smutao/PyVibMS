@@ -27,7 +27,7 @@ User Guide
 Our paper on PyVibMS is now published. 🎉 
 
 PyVibMS: a PyMOL plugin for visualizing vibrations in molecules and solids,
-Journal of Molecular Modeling, 2020, 26, 290. https://link.springer.com/article/10.1007/s00894-020-04508-z
+Journal of Molecular Modeling, 2020, 26, 290. https://link.springer.com/article/10.1007/s00894-020-04508-z (full text available at https://sites.smu.edu/dedman/catco/publications/pdf/434.pdf)
 
 This paper serves as a detailed manual of PyVibMS and a few typographical errors need to be corrected:
 1) Page 2
