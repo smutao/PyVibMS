@@ -1439,7 +1439,7 @@ def run_plugin_gui():
 
            mod_arr = mod_arr/np.linalg.norm(mod_arr)*(ntimes**0.5) # normalized to sqrt(ntimes)
 
-           nslice = 6 #20
+           nslice = 6 #20 # number of frames for vibration animation 
            namplitude = global_amplitude #0.75
            xyz_slices = []
 
@@ -1475,7 +1475,7 @@ def run_plugin_gui():
            f1.close()
 
            cmd.load("vib_xyz.xyz","this_vib_supercell")
-           os.remove("vib_xyz.xyz")
+           os.remove("vib_xyz.xyz") # if you want to keep the trajectory, comment this line.
 
            cmd.disable("supercell")
 
@@ -1560,7 +1560,7 @@ def run_plugin_gui():
 
         mod_arr = mod_arr/np.linalg.norm(mod_arr) #normalize to 1 
 
-        nslice = 6 #20
+        nslice = 6 #20 # number of frames for vibration animation 
         namplitude = global_amplitude #0.75
         xyz_slices = []
 
@@ -1598,7 +1598,7 @@ def run_plugin_gui():
         f1.close()
 
         cmd.load("vib_xyz.xyz","this_vib")
-        os.remove("vib_xyz.xyz")
+        os.remove("vib_xyz.xyz") # if you want to keep the trajectory, comment out this line. 
 
         cmd.disable("geom") # hide the original starting structure 
 
@@ -2260,13 +2260,13 @@ def run_plugin_gui():
            #form.input_basis_beta.setDisabled(True)
            #form.input_basis_gamma.setDisabled(True)
 
-          if 0 == 0:
+          if True:
            form.input_v1.setDisabled(True)
            form.input_v2.setDisabled(True)
            form.input_v3.setDisabled(True)
 
         if dimension == "1":
-          if 2 == 1:  
+          if False:  
            #form.input_basis_a.setEnabled(True) 
            #form.input_basis_b.setDisabled(True)
            #form.input_basis_c.setDisabled(True)
@@ -2276,7 +2276,7 @@ def run_plugin_gui():
            form.input_v1.setDisabled(True)
            form.input_v2.setDisabled(True)
            form.input_v3.setDisabled(True)
-          if 0 == 0:
+          if True:
            form.input_v1.setEnabled(True)
            form.input_v2.setDisabled(True)
            form.input_v3.setDisabled(True)
@@ -2288,7 +2288,7 @@ def run_plugin_gui():
            #form.input_basis_gamma.setDisabled(True)
 
         if dimension == "2":
-          if 2 == 1:
+          if False:
            #form.input_basis_a.setEnabled(True) 
            #form.input_basis_b.setEnabled(True)
            #form.input_basis_c.setDisabled(True)
@@ -2298,7 +2298,7 @@ def run_plugin_gui():
            form.input_v1.setDisabled(True)
            form.input_v2.setDisabled(True)
            form.input_v3.setDisabled(True)
-          if 0 == 0:
+          if True:
            form.input_v1.setEnabled(True)
            form.input_v2.setEnabled(True)
            form.input_v3.setDisabled(True)
@@ -2310,7 +2310,7 @@ def run_plugin_gui():
            #form.input_basis_gamma.setDisabled(True)
 
         if dimension == "3":
-          if 2 == 1:  
+          if False:  
            #form.input_basis_a.setEnabled(True)
            #form.input_basis_b.setEnabled(True)
            #form.input_basis_c.setEnabled(True)
@@ -2320,7 +2320,7 @@ def run_plugin_gui():
            form.input_v1.setDisabled(True)
            form.input_v2.setDisabled(True)
            form.input_v3.setDisabled(True)
-          if 0 == 0:
+          if True:
            #form.input_basis_a.setDisabled(True)
            #form.input_basis_b.setDisabled(True)
            #form.input_basis_c.setDisabled(True)
@@ -2411,7 +2411,7 @@ def run_plugin_gui():
         #spec = form.input_lattice.currentIndex()
              # 0 - basis vector
              # 1 - lattice parameters
-        if 0 == 0:#spec == 0:
+        if True:#spec == 0:
          if d == "1":
            v1 = form.input_v1.text().split(",")
            v1 = [float(i) for i in v1]
