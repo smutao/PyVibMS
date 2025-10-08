@@ -76,7 +76,7 @@ Natively supported
 ----
 
 * Gaussian 09/16
-* ORCA 4
+* ORCA 4/5/6
 * xtb 
 * Q-Chem
 * CRYSTAL17
